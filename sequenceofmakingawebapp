@@ -1,0 +1,16 @@
+1) create the html file as a Template for page, each element should have a unique id(frontend)
+2) use css files(as a class or id) in html files to make it look nice
+3) use a js file to incorporate functions to the elements in the html file(backend)
+
+each html file can reference other html files to partition a page into different segments for development
+js files can use the class or id of the elemnts in the html Template files to manipulate information
+js files can make use of meteor libraries to do user accounts etc.
+
+##### might need to add back into packages when prototyping ######
+autopublish@1.0.7             # Publish all data to the clients (for prototyping)
+insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
+
+
+to add or to delete items from Db create functions in methods.js to do so
+
+publish and subscribe to post and retrieve data from db in pub.js and sub.js

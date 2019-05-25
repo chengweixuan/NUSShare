@@ -2,11 +2,25 @@
 <template name="topnavbar">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <div class="topnav" id="myTopnav">
+  <div class="navbar" id="myTopnav">
 
           <a class="company-logo active" href="#">NUS SHARE</a>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction()">Threads
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+              <a href="#">Thread 1</a>
+              <a href="#">Thread 2</a>
+              <a href="#">Thread 3</a>
+            </div>
+          </div>
+
           {{#if currentUser}}
+
           <a class="link-red" href="/profile" id="profile-link"><i class="fa fa-user"></i>Profile</a> <!-- id used in html to specify a unique html element or to point to a style in css -->
+
           {{else}}
           {{/if}}
           <a class="link-blue" href="/jokes" id="jokes-link"><i class="fa fa-comments-o"></i>Jokes</a>
@@ -17,17 +31,37 @@
           {{else}}
           <a class="" href="/" id="login-link"><i class="fa fa-sign-in"></i>Login</a>
           {{/if}}
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+        <a href="javascript:void(0);" class="icon" onclick="resize_dropdown()"><i class="fa fa-bars"></i></a>
   </div>
 
   <script>
-  function myFunction() {
+  function resize_dropdown() {
     var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
+    if (x.className === "navbar") {
       x.className += " responsive";
     } else {
-      x.className = "topnav";
+      x.className = "navbar";
     }
   }
+
+  function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
   </script>
 </template>

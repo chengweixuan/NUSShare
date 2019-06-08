@@ -1,0 +1,38 @@
+<template name="threadForm">
+  {{#if currentUser}}
+  <!-- Joke Form-->
+  <div class="container">
+    <form class="thread-form">
+
+      <h2 class="jokeForm-heading">Create a New Thread</h2>
+
+      <h4 class="jokeForm-heading">Name</h4>
+      <label for="threadName" class="sr-only">Thread Name</label>
+      <input type="text" name="threadName" id="threadName" class="form-control" placeholder="Thread Name" maxlength="40">
+
+      <h4 class="jokeForm-heading">Description</h4>
+      <textarea name="threadDesc" id="threadDesc" class="form-control" placeholder="This is how students understand the purpose of the thread" style="height:200px"></textarea>
+
+      <button class="btn btn-lg btn-success btn-block" type="submit">Create Thread</button>
+
+    </form>
+  </div>
+
+
+  <!-- End Joke Form-->
+
+  {{else}}
+
+  <!-- Joke Form-->
+  <div id="jokeForm-wrap">
+    <center>
+      <form class="joke-post">
+        <h2 class="from-signin-heading">Login to Post a Joke</h2>
+        <a href="/" class="btn btn-md btn-primary" id="login-redir">Login</a>
+      </form>
+    </center>
+  </div>
+  <!-- End Joke Form-->
+
+  {{/if}}
+</template>

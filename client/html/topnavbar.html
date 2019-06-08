@@ -7,11 +7,12 @@
           <a class="company-logo active" href="#">NUS SHARE</a>
 
           <div class="dropdown">
-            <button class="dropbtn" onclick="myFunction()">Threads
+            <button class="dropbtn" onclick="click_drop()">Threads
               <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="myDropdown">
-              <a href="#">Thread 1</a>
+              <a href="/threadForm">Create a New Thread</a>
+              <a href="/postForm">Create a New  Post</a>
               <a href="#">Thread 2</a>
               <a href="#">Thread 3</a>
             </div>
@@ -44,7 +45,7 @@
     }
   }
 
-  function myFunction() {
+  function click_drop() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 

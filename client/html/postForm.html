@@ -1,0 +1,57 @@
+<template name="postForm">
+  {{#if currentUser}}
+  <!-- Joke Form-->
+  <div class="container">
+    <form class="post-form">
+
+      <h2 class="jokeForm-heading">Create a New Post</h2>
+
+      <h4 class="jokeForm-heading">Title</h4>
+      <label for="postTitle" class="sr-only">Title</label>
+      <input type="text" name="postTitle" id="postTitle" class="form-control" placeholder="Post Title" maxlength="40">
+      <br>
+      <form class="upload-file" enctype="multipart/form-data" >
+        <label for="qnDoc">Choose File to Upload</label>
+        <span id="pdfname"></span>
+        <input type="file" name="qnDoc" id="qnDoc" class="black profileImage">
+        <!--<button type="submit" value="Upload a File" id="profile-btn" class="btn btn-sml btn-primary">Upload File</button>-->
+      </form>
+      <br>
+      <h4 class="jokeForm-heading">Description</h4>
+      <textarea id="threadDesc" name="threadDesc" placeholder="This is how students understand the purpose of the thread" style="height:200px"></textarea>
+
+      <h4 class="jokeForm-heading">Number of Questions</h4>
+      <label for="qnNumber" class="sr-only">Number of Questions</label>
+      <input type="text" name="qnNumber" id="qnNumber" class="form-control" placeholder="Number of Questions" maxlength="40">
+
+      <h4 class="jokeForm-heading">Module</h4>
+      <select id="Module" name="Module">
+        {{#each threads}}
+        <option value="australia">{{threadName}}</option>
+        {{else}}
+        <option value="australia">no threads to display</option>
+        {{/each}}
+      </select>
+      <h4 class="jokeForm-heading"> </h4>
+      <button class="btn btn-lg btn-success btn-block" type="submit">Create Thread</button><!-- upload both post and file-->
+    </form>
+  </div>
+
+
+  <!-- End Joke Form-->
+
+  {{else}}
+
+  <!-- Joke Form-->
+  <div id="jokeForm-wrap">
+    <center>
+      <form class="joke-post">
+        <h2 class="from-signin-heading">Login to Post a Joke</h2>
+        <a href="/" class="btn btn-md btn-primary" id="login-redir">Login</a>
+      </form>
+    </center>
+  </div>
+  <!-- End Joke Form-->
+
+  {{/if}}
+</template>

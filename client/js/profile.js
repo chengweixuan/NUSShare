@@ -28,7 +28,7 @@ Template.profile.helpers({
   userJokes: function(){
     var username = Meteor.user().username;
     var userId = Meteor.userId();
-    var userJokes = Jokes.find({userId: userId}, {sort: {createdAt: -1}});//grab all the jokes posted by userId with most recent one on top
+    var userJokes = Posts.find({userId: userId}, {sort: {createdAt: -1}});//grab all the jokes posted by userId with most recent one on top
     return userJokes;
   },
 

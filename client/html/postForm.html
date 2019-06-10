@@ -18,22 +18,22 @@
       </form>
       <br>
       <h4 class="jokeForm-heading">Description</h4>
-      <textarea id="threadDesc" name="threadDesc" placeholder="This is how students understand the purpose of the thread" style="height:200px"></textarea>
+      <textarea id="postDesc" name="postDesc" placeholder="This is how students understand the purpose of the post" style="height:200px"></textarea>
 
       <h4 class="jokeForm-heading">Number of Questions</h4>
       <label for="qnNumber" class="sr-only">Number of Questions</label>
       <input type="text" name="qnNumber" id="qnNumber" class="form-control" placeholder="Number of Questions" maxlength="40">
 
-      <h4 class="jokeForm-heading">Module</h4>
-      <select id="Module" name="Module">
+      <h4 class="jokeForm-heading">chosenThread</h4>
+      <select id="chosenThread" name="chosenThread">
         {{#each threads}}
-        <option value="australia">{{threadName}}</option>
+        <option value="{{threadName}}">{{threadName}}</option>
         {{else}}
-        <option value="australia">no threads to display</option>
+        <option value="No Threads">no threads to display</option>
         {{/each}}
       </select>
       <h4 class="jokeForm-heading"> </h4>
-      <button class="btn btn-lg btn-success btn-block" type="submit">Create Thread</button><!-- upload both post and file-->
+      <button class="btn btn-lg btn-success btn-block" type="submit">Create Post</button><!-- upload both post and file-->
     </form>
   </div>
 

@@ -40,5 +40,29 @@ Template.threadUser.helpers({
 Template.threadUser.events({
 	'click': function() {
 		Session.set("selectedThread", this.__originalId);
-	}
+	},
+
+	"click #subThread" : function(){
+		//Bert.alert("You Clicked Subscribe", "success", "growl-top-right");
+		var thisUser = Meteor.userId();
+		//console.log(thisUser);
+		var thisThread = this.__originalId;//the "this" in this._id refers to the object in the current context in this case is current joke
+		//console.log(thisThread);
+		var Name = Meteor.user().username;
+		//console.log(Name);
+		var thisThreadsSubs = Threads.findOne({_id: this.__originalId}, {subscribers: {$in: Name}}).subscribers;
+		//console.log(thisThreadsSubs);
+		if(thisThreadsSubs.indexOf(Name) > -1){
+			Bert.alert("You Are Already Subscribed", "danger", "growl-top-right");
+			// In the array!, means user has voted
+		}else{
+			//not in the array, add name to array?
+			Meteor.call("countSub", thisThread, Name);//method to add name to votees
+			Bert.alert("You Subscribed to the Thread", "success", "growl-top-right");
+		}
+
+		if(Name == thisThreadsSubs){
+			Bert.alert("you cannot subscribe to your own thread", " danger" ,"growl-top-right");
+		}
+	},
 });

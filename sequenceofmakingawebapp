@@ -14,3 +14,11 @@ insecure@1.0.7                # Allow all DB writes from clients (for prototypin
 to add or to delete items from Db create functions in methods.js to do so
 
 publish and subscribe to post and retrieve data from db in pub.js and sub.js
+
+things to do by milestone 2
+
+filter subscribed posts by thread
+comment section for posts
+upload functionality for documents and images
+upvoting and downvoting system for comment+posts
+subscriber count for each thread

@@ -139,10 +139,13 @@ Meteor.startup(function() {
         username: 'User4',
         email: 'user4@example.com',
         password: 'password',
-        profile: {
+        profile:{
           laughScore: 0,
           frownScore: 0,
           pukeScore: 0,
+          upvoted: [],
+          downvoted: [],
+          subscriptions: [],
         }
       });
 

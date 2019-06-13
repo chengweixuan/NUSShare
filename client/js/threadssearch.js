@@ -58,7 +58,7 @@ Template.threadUser.events({
 			// In the array!, means user has voted
 		}else{
 			//not in the array, add name to array?
-			Meteor.call("countSub", thisThread, Name);//method to add name to votees
+			Meteor.call("countSub", thisThread, Name);
 			Meteor.call("profileSubs",thisUser, thisThread);
 			Bert.alert("You Subscribed to the Thread", "success", "growl-top-right");
 		}

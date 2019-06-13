@@ -18,7 +18,9 @@ Template.signup.events({
           laughScore: 0,
           frownScore: 0,
           pukeScore: 0,
-          voted: [],
+          upvoted: [],
+          downvoted: [],
+          subscriptions: [],
         }
       }, function(err){
         if(err){

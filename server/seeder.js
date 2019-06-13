@@ -11,10 +11,13 @@ Meteor.startup(function() {
         username: 'Super User',
         email: 'Super@user.com',
         password: 'password',
-        profile: {
-        	laughScore: 0,
-        	frownScore: 0,
+        profile:{
+          laughScore: 0,
+          frownScore: 0,
           pukeScore: 0,
+          upvoted: [],
+          downvoted: [],
+          subscriptions: [],
         }
       });
 
@@ -40,10 +43,13 @@ Meteor.startup(function() {
         username: 'User1',
         email: 'user1@example.com',
         password: 'password',
-        profile: {
+        profile:{
           laughScore: 0,
           frownScore: 0,
           pukeScore: 0,
+          upvoted: [],
+          downvoted: [],
+          subscriptions: [],
         }
       });
 
@@ -69,10 +75,13 @@ Meteor.startup(function() {
         username: 'User2',
         email: 'user2@example.com',
         password: 'password',
-        profile: {
+        profile:{
           laughScore: 0,
           frownScore: 0,
           pukeScore: 0,
+          upvoted: [],
+          downvoted: [],
+          subscriptions: [],
         }
       });
 
@@ -98,10 +107,13 @@ Meteor.startup(function() {
         username: 'User3',
         email: 'user3@example.com',
         password: 'password',
-        profile: {
+        profile:{
           laughScore: 0,
           frownScore: 0,
           pukeScore: 0,
+          upvoted: [],
+          downvoted: [],
+          subscriptions: [],
         }
       });
 

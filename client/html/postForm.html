@@ -27,7 +27,7 @@
       <h4 class="jokeForm-heading">chosenThread</h4>
       <select id="chosenThread" name="chosenThread">
         {{#each threads}}
-        <option value="{{threadName}}">{{threadName}}</option>
+        <option value="{{_id}}">{{threadName}}</option>
         {{else}}
         <option value="No Threads">no threads to display</option>
         {{/each}}

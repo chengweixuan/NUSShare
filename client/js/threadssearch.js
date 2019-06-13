@@ -45,7 +45,8 @@ Template.threadUser.events({
 	"click #subThread" : function(){
 		//Bert.alert("You Clicked Subscribe", "success", "growl-top-right");
 		var thisUser = Meteor.userId();
-		//console.log(thisUser);
+
+		//console.log(subbedthreads);
 		var thisThread = this.__originalId;//the "this" in this._id refers to the object in the current context in this case is current joke
 		//console.log(thisThread);
 		var Name = Meteor.user().username;

@@ -31,10 +31,23 @@
   <h1>no jokes to display</h1>
   {{/each}}
   -->
-{{#each posts}}
-<div class="joke">
-  <div class="row">
+  <div id="myBtnContainer">
+    <div class="dropdown">
+      <button class="dropbtn" onclick="click_dropthreads()">Filter Threads
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content" id="myDropdownFilter">
+        <button class="btn active"> Show all</button>
+          {{#each subscriptions}}
+            <button class="btn" value="{{_id}}">{{threadName}}</button>
+          {{/each}}
+      </div>
+    </div>
+  </div>
 
+{{#each posts}}
+<div class=" joke  {{chosenThread}}" >
+  <div class="row">
     <div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
       <h1 class="joke-title">{{postTitle}}</h1>
       <p class="meta">Author: {{author}}</p>
@@ -59,4 +72,68 @@
 <h1>no posts to display</h1>
 {{/each}}
 
+
+<script>
+function click_dropthreads() {
+document.getElementById("myDropdownFilter").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+if (!event.target.matches('.dropbtn')) {
+  var dropdowns = document.getElementsByClassName("dropdown-content");
+  var i;
+  for (i = 0; i < dropdowns.length; i++) {
+    var openDropdown = dropdowns[i];
+    if (openDropdown.classList.contains('show')) {
+      openDropdown.classList.remove('show');
+    }
+  }
+}
+}
+
+/*filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("joke");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}*/
+
+</script>
 </template>

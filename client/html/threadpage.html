@@ -1,7 +1,10 @@
 <template name="threadpage">
   <span id="testing">testing text</span>
 
-  {{#each all_post}}
+  {{#each posts}}
     <p class="black">{{postDesc}}</p>
+  {{else}}
+
+  <p>no posts</p>
   {{/each}}
 </template>

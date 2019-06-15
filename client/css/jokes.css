@@ -13,8 +13,14 @@
 	margin: 0px 0px 20px 0px;
 }
 
+.sub-title {
+  max-width: 300px;
+  padding-right: 10px;
+  margin: 0 0 60px 0px;
+}
+
 .joke:hover {
-	
+
 	background-color: #3a3a3a;
 }
 
@@ -24,10 +30,10 @@
  	color:#fff;
  	background-repeat:no-repeat;
  	background-attachment:scroll;
-	background-position:center center; 
-	-webkit-background-size:cover; 
-	-moz-background-size:cover; 
-	background-size:cover; 
+	background-position:center center;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	background-size:cover;
 	-o-background-size:cover;
 }
 
@@ -40,7 +46,7 @@
 }
 
 .meta {
-	color: #fff;	
+	color: #fff;
 	font-size: 18px;
 	font-weight: 900;
 }
@@ -88,5 +94,3 @@
 	padding-top: 0px;
 	margin-top: 0px;
 }
-
-

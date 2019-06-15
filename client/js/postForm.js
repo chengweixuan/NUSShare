@@ -18,7 +18,7 @@ Template.postForm.events({
       event.target.chosenThread.value = "";
 
 
-      Bert.alert("your thread was created!", "success", "growl-top-right");
+      Bert.alert("Post Created!", "success", "growl-top-right");
 
     }else{
       Bert.alert("something went wrong", "danger", "growl-top-right");

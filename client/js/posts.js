@@ -15,9 +15,7 @@ Template.jokes.helpers({//to retrieve jokes from Jokes database
 });
 
 Template.jokes.events({
-  "click .btn": function(){
-  //console.log("filter button pressed");
-  var selectedThread = event.value;
-  console.log(selectedThread);
-  }
+  'click': function() {
+    Session.set("selectedThread", this._id);
+  },
 });

@@ -33,20 +33,19 @@
   -->
   <div id="myBtnContainer">
     <div class="dropdown">
-      <button class="dropbtn" onclick="click_dropthreads()">Filter Threads
+      <button class="dropbtn" onclick="click_dropthreads()">Subscribed Threads
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content" id="myDropdownFilter">
-        <button class="btn active"> Show all</button>
           {{#each subscriptions}}
-            <button class="btn" value="{{_id}}">{{threadName}}</button>
+            <a class="link-green" href="threadpage/{{_id}}">{{threadName}}</a>
           {{/each}}
       </div>
     </div>
   </div>
 
 {{#each posts}}
-<div class=" joke  {{chosenThread}}" >
+<div class="joke" >
   <div class="row">
     <div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
       <h1 class="joke-title">{{postTitle}}</h1>

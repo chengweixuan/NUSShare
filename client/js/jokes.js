@@ -15,7 +15,7 @@ Template.jokes.helpers({//to retrieve jokes from Jokes database
 
 
 Template.jokes.events({
-  "click #laugh" : function(){
+  /*"click #laugh" : function(){
     Bert.alert("you clicked laugh", "success", "growl-top-right");
     var thisUser = Meteor.userId();
     var thisJoke = Jokes.findOne({_id: this._id})._id;//the "this" in this._id refers to the object in the current context in this case is current joke
@@ -89,5 +89,5 @@ Template.jokes.events({
       Bert.alert("you cannot vote for your own joke", " danger" ,"growl-top-right");
     }
 
-  },
+  },*/
 });

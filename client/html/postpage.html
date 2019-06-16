@@ -1,3 +1,15 @@
 <template name="postpage">
-  <span id="testing">press</span>
+
+  {{#with post}}
+
+    <div class="heading">
+      <h3 class="count blue block" id="testing">{{postTitle}}</h3>
+      <br>
+      <p>{{postDesc}}</p>
+      <br>
+      <p>Number of Questions: {{qnNumber}}</p>
+    </div>
+
+  {{/with}}
+
 </template>

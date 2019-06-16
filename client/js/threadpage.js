@@ -23,4 +23,8 @@ Template.threadpage.events({
     console.log(id);
   },
 
+  "click #redirect": function() {
+    Session.set("selectedPost", this._id);
+  }
+
 });

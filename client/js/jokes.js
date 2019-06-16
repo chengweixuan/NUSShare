@@ -90,4 +90,9 @@ Template.jokes.events({
     }
 
   },*/
+
+  "click #redirect": function() {
+    Session.set("selectedPost", this._id);
+  },
+
 });

@@ -19,7 +19,8 @@ Template.postpage.helpers({
     return post;
   },
   comments: function(){
-    var comments = Comments.find({},{sort: {createdAt:-1}});
+    var id = Session.get("selectedPost");
+    var comments = Comments.find({chosenPost: id},{sort: {createdAt:-1}});
     return comments;
   }
 

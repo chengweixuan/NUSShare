@@ -4,6 +4,7 @@ Template.commentForm.rendered = function(){
 
 Template.commentForm.events({
   "submit .comment-form": function(){
+    event.preventDefault()
     var commentDesc = event.target.commentDesc.value;
     var chosenPost = Session.get("selectedPost");
 
@@ -19,7 +20,9 @@ Template.commentForm.events({
     }else{
       Bert.alert("something went wrong", "danger", "growl-top-right");
     }
+
     return false;
+
   }
 });
 //validation Rules

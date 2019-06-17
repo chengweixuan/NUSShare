@@ -1,6 +1,16 @@
+// Tracker.autorun(function(){
+//   var postid = Session.get("selectedPost");
+// 	if(Meteor.userId()){//if current user is logged in
+// 		Router.go("/postpage/postid");//go to /jokes on refresh
+// 	}
+// });
+
+
 Template.postpage.rendered = function() {
 
 }
+
+
 
 Template.postpage.helpers({
   post: function() {
@@ -8,6 +18,10 @@ Template.postpage.helpers({
     var post = Posts.findOne( {_id: id} );
     return post;
   },
+  comments: function(){
+    var comments = Comments.find({},{sort: {createdAt:-1}});
+    return comments;
+  }
 
 });
 

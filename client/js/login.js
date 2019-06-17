@@ -1,8 +1,8 @@
-Tracker.autorun(function(){
-	if(Meteor.userId()){//if current user is logged in
-		Router.go("/jokes");//go to /jokes on refresh
-	}
-});
+// Tracker.autorun(function(){
+// 	if(Meteor.userId()){//if current user is logged in
+// 		Router.go("/jokes");//go to /jokes on refresh
+// 	}
+// });
 
 
 Template.login.rendered = function(){

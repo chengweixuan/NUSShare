@@ -14,4 +14,14 @@
 
   {{/with}}
 
+{{> commentForm}}
+
+{{#each comments}}
+<div class="heading">
+  <h3 class="count blue block" id="testing">{{commentDesc}}</h3>
+</div>
+{{else}}
+<h1>no posts to display</h1>
+{{/each}}
+
 </template>

@@ -7,7 +7,16 @@
 
 
 Template.postpage.rendered = function() {
-
+  var id = Session.get("selectedPost");
+  var qnnum = Posts.findOne( {_id: id} ).qnNumber;
+  for(i = 0; i<qnnum; i++){
+    var anchor = document.createElement('a');
+    anchor.setAttribute('class', 'link-green');
+    var qnLink = "/questionpage/id" + (i+1);
+    anchor.setAttribute('href', qnLink);
+    anchor.innerHTML = "question " + (i+1) + "<br>";
+    document.getElementById("postsrc").appendChild(anchor);
+  }
 }
 
 
@@ -31,5 +40,13 @@ Template.postpage.events({
   "click #testing": function() {
     var id = Session.get("selectedThread");
     console.log(id);
+  },
+
+  "click #testcreate": function() {
+    var anchor = document.createElement('a');
+    anchor.setAttribute('class', 'link-green');
+    anchor.setAttribute('href', '/rankings');
+    anchor.innerHTML = "question here";
+    document.getElementById("postsrc").appendChild(anchor);
   },
 });

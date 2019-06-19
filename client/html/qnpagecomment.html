@@ -1,0 +1,33 @@
+<template name="qnpagecomment">
+  {{#if currentUser}}
+  <!-- Joke Form-->
+  <div class="container">
+    <form class="qnpagecomment-form">
+
+      <h2 class="jokeForm-heading">New Comment</h2>
+
+      <h4 class="jokeForm-heading">Description</h4>
+      <textarea id="qnDesc" name="qnDesc" placeholder="New Comment" style="height:200px"></textarea>
+
+      <button class="btn btn-lg btn-success btn-block" type="submit">Submit Comment</button><!-- upload both post and file-->
+    </form>
+  </div>
+
+
+  <!-- End Joke Form-->
+
+  {{else}}
+
+  <!-- Joke Form-->
+  <div id="jokeForm-wrap">
+    <center>
+      <form class="joke-post">
+        <h2 class="from-signin-heading">Login to Post a Comment</h2>
+        <a href="/" class="btn btn-md btn-primary" id="login-redir">Login</a>
+      </form>
+    </center>
+  </div>
+  <!-- End Joke Form-->
+
+  {{/if}}
+</template>

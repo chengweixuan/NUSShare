@@ -4,4 +4,14 @@
   <p>questions are here</p>
 </div>
 
+
+{{> qnpagecomment}}
+
+{{#each questions}}
+<div class="heading">
+  <p>{{qnDesc}}</p>
+</div>
+{{else}}
+<p>no comments</p>
+{{/each}}
 </template>

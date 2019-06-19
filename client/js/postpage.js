@@ -11,10 +11,11 @@ Template.postpage.rendered = function() {
   var qnnum = Posts.findOne( {_id: id} ).qnNumber;
   for(i = 0; i<qnnum; i++){
     var anchor = document.createElement('a');
-    anchor.setAttribute('class', 'link-green');
-    var qnLink = "/questionpage/id" + (i+1);
+    anchor.setAttribute('class', 'link-green gotoQn');
+    var qnLink = "/questionpage/" + id + (i+1);
     anchor.setAttribute('href', qnLink);
     anchor.innerHTML = "question " + (i+1) + "<br>";
+    anchor.setAttribute('id', (i+1));
     document.getElementById("postsrc").appendChild(anchor);
   }
 }
@@ -48,5 +49,12 @@ Template.postpage.events({
     anchor.setAttribute('href', '/rankings');
     anchor.innerHTML = "question here";
     document.getElementById("postsrc").appendChild(anchor);
+  },
+
+  "click .gotoQn": function() {
+    var id = Session.get("selectedPost");
+    var qnno = event.target.id;
+    var qnid = id+qnno;
+    Session.set("selectedQn", qnid);
   },
 });

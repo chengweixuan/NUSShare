@@ -1,21 +1,30 @@
 /* The main content */
 .main-content {
-  max-width: 600px;
+  max-width: 1400px;
   padding-top: 40px;
   padding-right: 40px;
-  margin: 0 0 40px 250px;
+  margin: 0 0 40px 40px;
 }
 
 .joke {
 	border: 1px solid #ececec;
 	background-color: #2d2d2d;
-	padding: 10px 20px;
-	margin: 0px 0px 20px 0px;
+	padding: 0px 0px;
+	margin: 0px 0px 0px 0px;
+  border-left-style: solid;
+  display: flex;
+  flex-direction: row;
+}
+
+.votecol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .sub-title {
   max-width: 300px;
-  padding-right: 10px;
+  /*padding-right: 10px;*/
   margin: 0 0 60px 0px;
 }
 
@@ -39,10 +48,10 @@
 
 .joke-title {
 	color: #52b859;
-	font-size: 40px;
+	font-size: 20px;
 	margin: 0px 0px;
 	padding-bottom: 10px;
-	word-wrap: break-word;
+	word-wrap: break-wor;
 }
 
 .meta {
@@ -53,8 +62,8 @@
 
 .joke-desc {
 	color: #bcbcbc;
-	font-size: 18px;
-    line-height: 1.8;
+	font-size: 12px;
+  margin-top: 50px;
 }
 
 .smiley {

@@ -7,9 +7,11 @@ Template.qnpagecomment.events({
     event.preventDefault();
     var qnDesc = event.target.qnDesc.value;
     var chosenQn = Session.get("selectedQn");
+    var posterId = Session.get("selectedPost");
+    var poster = Posts.findOne( {_id: posterId} ).author;
 
     if(isNotEmpty(qnDesc) && isNotEmpty(chosenQn)){
-      Meteor.call("addQnComment", qnDesc, chosenQn);//call Meteor server side method to do something with threadName and threadDesc
+      Meteor.call("addQnComment", qnDesc, chosenQn, poster);//call Meteor server side method to do something with threadName and threadDesc
       event.target.qnDesc.value = "";//clear form after sending it to server side method
       event.target.chosenQn.value = "";
       Bert.alert("Comment Created!", "success", "growl-top-right");

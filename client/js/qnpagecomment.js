@@ -12,7 +12,7 @@ Template.qnpagecomment.events({
 
     if(isNotEmpty(qnDesc) && isNotEmpty(chosenQn)){
       Meteor.call("addQnComment", qnDesc, chosenQn, poster);//call Meteor server side method to do something with threadName and threadDesc
-      event.target.qnDesc.value = "";//clear form after sending it to server side method
+      event.target.qnDesc.value = "";//clear form after sending it to server side method with stuff
       event.target.chosenQn.value = "";
       Bert.alert("Comment Created!", "success", "growl-top-right");
     }else{

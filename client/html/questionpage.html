@@ -4,8 +4,35 @@
   <p>questions are here</p>
 </div>
 
+{{#with og_post}}
+
+  {{> qnpagepinned}}
+
+{{/with}}
 
 {{> qnpagecomment}}
+
+{{#with pins}}
+
+<h3>Author's Queries</h3>
+
+{{/with}}
+
+{{#each pins}}
+  <div class="">
+
+    <p>{{qnDesc}}</p>
+
+  </div>
+
+  {{else}}
+  <p>no queries</p>
+{{/each}}
+
+<br>
+
+<br>
+<h3>Comments</h3>
 
 {{#each questions}}
 <div class="heading">

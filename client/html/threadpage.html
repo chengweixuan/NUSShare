@@ -1,17 +1,31 @@
 <template name="threadpage">
-  <div class="heading">
+
+
 
     {{#with single_thread}}
-    <h2 class="count green block">{{threadName}}</h2>
-    <span class="count black block">{{threadDesc}}</span>
-    <p class="author">Created By: {{author}}</p>
-    <p id="date">Created On: {{date}}</p>
-    {{/with}}
-  </div>
+  <div class="thread">
+    <div class="row">
+      <p class="joke-title">{{threadName}}</p>
+      <p class="regular joke-desc">{{threadDesc}} <br> Created By: {{author}} <br> Created On: {{date}}</p>
+    </div>
 
+    <!--<span class="count black block">{{threadDesc}}</span>
+    <p class="author">Created By: {{author}}</p>
+    <p id="date">Created On: {{date}}</p>-->
+
+  </div>
+  {{/with}}
   <br>
 
-  {{#each posts}}
+<div class="joke">
+  <div class="threadbar">
+    <p class="regular joke-title">Votes</p>
+  </div>
+  <div class="threadbar">
+    <p class="regular joke-title">Topic</p>
+  </div>
+</div>
+<!--  {{#each posts}}
 
     <div class="postinfo">
       <h3 class="black">{{postTitle}}</h3>
@@ -27,5 +41,42 @@
   {{else}}
 
   <p>no posts</p>
+  {{/each}}-->
+
+  {{#each posts}}
+  <div class="joke">
+    <div class="votecol" id="vote">
+      <div>
+        <img src="laugh.png" class="smiley" id="upvote">
+        <h3 class="count red block">{{upvoted.length}}</h3>
+      </div>
+      <div>
+        <img src="frown.png" class="smiley" id="downvote">
+        <h3 class="count yellow block">{{downvoted.length}}</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <!--<div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">-->
+        <a class="joke-title" href="/postpage/{{_id}}" id="redirect">{{postTitle}}</a>
+        <!--<p class="meta">Author: {{author}}</p>
+        <p class="meta">Posted On: {{date}}</p>-->
+        <!--<a class="link-blue" href="/postpage/{{_id}}" id="redirect">Go to Post</a>-->
+
+      <!--</div>-->
+
+      <!--<div class="row" id="score">
+        <h3 class="count red block">{{upvoted.length}}</h3>
+        <h3 class="count yellow block">{{downvoted.length}}</h3>
+      </div>-->
+      <p class="regular joke-desc">{{chosenThreadName}} <br> Author: {{author}}</p>
+    </div>
+
+    <!--<p class="regular joke-desc">{{postDesc}}</p>
+    <p class="regular joke-desc">{{qnNumber}}</p>-->
+
+  </div>
+  {{else}}
+  <h1>no posts to display</h1>
   {{/each}}
 </template>

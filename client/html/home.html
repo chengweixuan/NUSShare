@@ -44,9 +44,18 @@
     </div>
   </div>
 
+  <div class="joke">
+    <div class="threadbar">
+      <p class="regular joke-title">Votes</p>
+    </div>
+    <div class="threadbar">
+      <p class="regular joke-title">Topic</p>
+    </div>
+  </div>
+
 {{#each posts}}
 <div class="joke" >
-  <div class=".votecol" id="vote">
+  <div class="votecol" id="vote">
     <div>
       <img src="laugh.png" class="smiley" id="upvote">
       <h3 class="count red block">{{upvoted.length}}</h3>

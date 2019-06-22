@@ -29,9 +29,37 @@ Template.questionpage.helpers({
     return questions;
   },
 
+  og_post: function() {
+    var id = Session.get("selectedPost");
+    var og_post = Posts.findOne( {_id: id} );
+    var author = og_post.author;
+    var which_ques = Session.get("selectedQn");
+    if (author == Meteor.user().username) { // only appears of its the orginal poster
+      return og_post;
+    } else {
+      return false;
+    }
+  },
+
+  pins: function() {
+    var id = Session.get("selectedQn");
+    var pins = Pinned.find({chosenQn: id},{sort: {createdAt:-1}});
+    return pins;
+  },
+
 });
 
 
 Template.questionpage.events({
+
+  //"click #test": function() {
+    //test block
+    // var id = Session.get("selectedQn");
+    // var test = Pinned.find({chosenQn: id});
+    // console.log(Session.get("selectedQn"));
+    // console.log(test.stats());
+
+    // return false;
+  //},
 
 });

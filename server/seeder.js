@@ -23,20 +23,17 @@ Meteor.startup(function() {
 
       var user0Id = Meteor.users.findOne({username: 'Super User'})._id;
 
-      Jokes.insert({
-        jokeName: "Lame Joke 1",
+      Threads.insert({
+        threadName: "Thread 1",
         jokePost: "This is a very very lame joke",
         author: "Super User",
         date: date,
         createdAt: new Date(),
-        laughScore: 0,
-        frownScore: 0,
-        pukeScore: 0,
-        voted: ["Super User"],
+        subscribers: [],
         userId: user0Id,
       });
       console.log("Super User Created");
-      console.log("Super User Joke Created");
+      console.log("Super User Thread Created");
 
       // User 1
       Accounts.createUser({
@@ -55,16 +52,13 @@ Meteor.startup(function() {
 
       var user1Id = Meteor.users.findOne({username: 'User1'})._id;
 
-      Jokes.insert({
-        jokeName: "Funny Joke 1",
-        jokePost: "This is a very very Funny joke",
+      Threads.insert({
+        threadName: "Thread 2",
+        jokePost: "This is a very very lame joke",
         author: "User1",
         date: date,
         createdAt: new Date(),
-        laughScore: 0,
-        frownScore: 0,
-        pukeScore: 0,
-        voted: ["User1"],
+        subscribers: [],
         userId: user1Id,
       });
       console.log("User1 Created");
@@ -87,20 +81,21 @@ Meteor.startup(function() {
 
       var user2Id = Meteor.users.findOne({username: 'User2'})._id;
 
-      Jokes.insert({
-        jokeName: "Nasty Joke 1",
-        jokePost: "This is a very very Nasty joke",
+      Posts.insert({
+        postTitle: "Post 1",
+        postDesc: "This is a very very Nasty joke",
+        qnNumber: "3",
+        chosenThread: Threads.findOne({threadName: "Thread 1"}),
+        chosenThreadName: "Thread 1",
         author: "User2",
         date: date,
         createdAt: new Date(),
-        laughScore: 0,
-        frownScore: 0,
-        pukeScore: 0,
-        voted: ["User2"],
+        upvoted: [],
+        downvoted: [],
         userId: user2Id,
       });
       console.log("User2 Created");
-      console.log("User2 Joke Created");
+      console.log("User2 Post Created");
 
       // User 3
       Accounts.createUser({

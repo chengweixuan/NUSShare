@@ -7,9 +7,10 @@ Template.commentForm.events({
     event.preventDefault()
     var commentDesc = event.target.commentDesc.value;
     var chosenPost = Session.get("selectedPost");
+    var poster = Posts.findOne( {_id: chosenPost} ).author;
 
     if(isNotEmpty(commentDesc) && isNotEmpty(chosenPost)){
-      Meteor.call("addComment", commentDesc, chosenPost);//call Meteor server side method to do something with threadName and threadDesc
+      Meteor.call("addComment", commentDesc, chosenPost, poster);//call Meteor server side method to do something with threadName and threadDesc
       event.target.commentDesc.value = "";//clear form after sending it to server side method
       event.target.chosenPost.value = "";
 

@@ -14,7 +14,7 @@
   border-left-style: solid;
   display: flex;
   flex-direction: row;
-  flex: 0 0 200em;
+  flex:auto;
 }
 
 .joke {
@@ -32,6 +32,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .threadbar {
@@ -69,7 +70,7 @@
 	font-size: 20px;
 	margin: 0px 0px;
 	padding-bottom: 10px;
-	word-wrap: break-wor;
+	word-wrap: break-word;
 }
 
 .meta {

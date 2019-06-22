@@ -1,0 +1,35 @@
+.postheading{
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  padding-left: 50px;
+  margin: 0px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 200em;
+}
+
+.commentheading{
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  padding-left: 50px;
+  margin: 0px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  word-wrap: break-word;
+}
+
+.comment-desc {
+	color: ##000000;
+	font-size: 12px;
+  margin-top: 10px;
+}
+
+.commentformat {
+	border-radius: 25px;
+	background-color: #FFFFFF;
+	padding: 0px 0px;
+	margin: 0px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 200em;
+}

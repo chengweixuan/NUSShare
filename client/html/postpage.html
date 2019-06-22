@@ -1,38 +1,62 @@
 <template name="postpage">
 
   {{#with post}}
+  <div class="joke" >
+    <div class="votecol" id="vote">
+      <div>
+        <img src="laugh.png" class="smiley" id="upvote">
+        <h3 class="count red block">{{upvoted.length}}</h3>
+      </div>
+      <div>
+        <img src="frown.png" class="smiley" id="downvote">
+        <h3 class="count yellow block">{{downvoted.length}}</h3>
+      </div>
+    </div>
 
-    <div class="heading" id="postsrc">
-      <h3 class="count blue block" id="testing">{{postTitle}}</h3>
-      <br>
+    <div class="row">
+        <a class="joke-title" href="/postpage/{{_id}}" id="redirect">{{postTitle}}</a>
+      <p class="regular joke-desc">{{chosenThreadName}} <br> Author: {{author}}</p>
+</div>
+</div>
+    <div class="postheading" id="postsrc">
       <p>{{postDesc}}</p>
       <br>
+      <p>Number of votes: no of upvoted - no of downvoted </p>
       <p>Number of Questions: {{qnNumber}}</p>
       <br>
-      <p>Number of votes: {{score}} </p>
     </div>
 
   {{/with}}
 
-  <!--<h3 class="count red block" id="testcreate">test create element</h3>-->
+<div class="commentheading">
+  <br>
+  {{> commentForm}}
+  <br>
+</div>
 
-{{> commentForm}}
-<h3 class="count blue block" id="testing">Comments</h3>
+<div class="commentheading">
+  <h3 class="count blue block" id="testing">Comments</h3>
+</div>
+
+
 {{#each comments}}
-<div class="heading">
+<div class="commentformat">
+<div class="votecol" id="vote">
+  <div>
 
-  <p>{{commentDesc}}</p>
-  <h6>{{op}}</h6>
-  <div class=".col-sm-6 .col-md-5 .col-lg-offset-2 .col-lg-6 .col-lg-offset-0" id="vote">
     <img src="laugh.png" class="smiley" id="upvote">
+    <h3 class="count red block">{{upvoted.length}}</h3>
+  </div>
+  <div>
     <img src="frown.png" class="smiley" id="downvote">
-    <!--<img src="puke.png" class="smiley" id="downvote">-->
+    <h3 class="count yellow block">{{downvoted.length}}</h3>
   </div>
-  <div class="row" id="score">
-    <h3 class="count red block">10</h3>
-    <h3 class="count yellow block">10</h3>
-    <!--<h3 class="count green block">{{pukeScore}}</h3>-->
-  </div>
+</div>
+<div class="row">
+    <p class="regular comment-desc">{{commentDesc}}</p>
+</div>
+
+
 </div>
 {{else}}
 <h1>no comments to display</h1>

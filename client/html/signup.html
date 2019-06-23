@@ -3,7 +3,7 @@
     <h3 class="white">You are logged in. return <a href="/">home</a></h3>
   {{else}}
   <form class="form-signup" id="register-form">
-    <h2 class="form-signin-heading">Create Account</h2>
+    <h2 class="form-signin">Create Account</h2>
     <label for="username" class="sr_only">User Name</label>
     <input type="text" name="username" id="username" class="form-control" placeholder="User Name"> <!-- bootstrap form control -->
 
@@ -17,7 +17,7 @@
     <input type="password" name="password2" id="password2" class="form-control" placeholder="Password Confirm">
 
     <button type="submit" id="login-btn" class="btn btn-lg btn-primary btn-block">Log In</button>
-    <p>No Account? <a href="/"> Create Account</a></p>
+    <p class="form-signin">No Account? <a href="/"> Create Account</a></p>
   </form>
   {{/if}}
 </template>

@@ -4,17 +4,17 @@
 
   <div class="navbar" id="myTopnav">
 
-          <a class="company-logo active" href="#">NUS SHARE</a>
+          <a class="company-logo" href="/jokes">NUS SHARE</a>
 
-          <div class="dropdown">
-            <button class="dropbtn" onclick="click_drop()">Create
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content" id="myDropdown">
-              <a href="/threadForm">Create a New Thread</a>
-              <a href="/postForm">Create a New  Post</a>
-            </div>
-          </div>
+
+
+
+
+                <a href="/threadForm">Create a New Thread</a>
+                <a href="/postForm">Create a New  Post</a>
+
+
+
 
           {{#if currentUser}}
 
@@ -45,7 +45,8 @@
   }
 
   function click_drop() {
-  document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("myDropdown").classList.toggle('show');
+  //console.log("button pressed!");
 }
 
 // Close the dropdown if the user clicks outside of it

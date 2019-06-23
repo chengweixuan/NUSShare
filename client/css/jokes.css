@@ -7,26 +7,64 @@
 }
 
 .thread{
-  border-radius: 25px;
-  background-color: #2d2d2d;
+  border-radius: 10px;
+  background-color: #7B68EE;
   padding-left: 50px;
   margin: 0px 0px 0px 0px;
-  border-left-style: solid;
   display: flex;
   flex-direction: row;
   flex:auto;
 }
 
 .joke {
-	border-radius: 25px;
-	background-color: #2d2d2d;
+	background-color: #FFFAFA;
 	padding: 0px 0px;
 	margin: 0px 0px 0px 0px;
-  border-left-style: solid;
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 200em;
+  border-bottom:solid;
+}
+
+.joke-head {
+	border-radius: 10px 10px 0px 0px;
+	background-color: #7B68EE;
+	padding: 0px 0px;
+	margin: 0px 0px 0px 0px;
   display: flex;
   flex-direction: row;
   flex: 0 0 200em;
 }
+
+.form-head {
+	border-radius: 10px 10px 0px 0px;
+	background-color: #7B68EE;
+	padding: 0px 0px;
+	margin: 0px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.form-tail {
+	border-radius: 0px 0px 10px 10px;
+	background-color: #7B68EE;
+  padding-left: 10px;
+  width: auto;
+  height: auto;
+  
+}
+
+.joke-tail {
+	border-radius: 0px 0px 10px 10px;
+	background-color: #7B68EE;
+	padding: 0px 0px;
+	margin: 0px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 200em;
+}
+
 
 .votecol {
   display: flex;
@@ -44,12 +82,12 @@
 .sub-title {
   max-width: 300px;
   /*padding-right: 10px;*/
-  margin: 0 0 60px 0px;
+  margin: 0 0 10px 0px;
 }
 
 .joke:hover {
 
-	background-color: #3a3a3a;
+	background-color: #DCDCDC;
 }
 
 .joke-img {
@@ -66,7 +104,15 @@
 }
 
 .joke-title {
-	color: #52b859;
+	color: black;
+	font-size: 20px;
+	margin: 0px 0px;
+	padding-bottom: 10px;
+	word-wrap: break-word;
+}
+
+.joke-head-font {
+	color: #FFFAFA;
 	font-size: 20px;
 	margin: 0px 0px;
 	padding-bottom: 10px;
@@ -80,7 +126,7 @@
 }
 
 .joke-desc {
-	color: #bcbcbc;
+	color: black;
 	font-size: 12px;
   margin-top: 35px;
 }

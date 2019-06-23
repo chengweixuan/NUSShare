@@ -1,25 +1,26 @@
 <template name="questionpage">
 
-<div class="heading">
-  <p>questions are here</p>
-</div>
+  <div class="joke-head">
+    <div class="threadbar">
+      <p class="regular joke-title"></p>
+    </div>
+    <br>
+    <div class="threadbar">
+      <p class="regular joke-title"></p>
+    </div>
+  </div>
 
-{{#with og_post}}
-
-  {{> qnpagepinned}}
-
-{{/with}}
-
-{{> qnpagecomment}}
 
 {{#with pins}}
+<div class="post-main">
+  <h3 class="regular joke-title">Author's Queries</h3>
+</div>
 
-<h3>Author's Queries</h3>
 
 {{/with}}
 
 {{#each pins}}
-  <div class="">
+  <div class="postheading">
 
     <p>{{qnDesc}}</p>
 
@@ -28,18 +29,62 @@
   {{else}}
   <p>no queries</p>
 {{/each}}
+<div class="commentheading">
+  {{#with og_post}}
 
-<br>
+    {{> qnpagepinned}}
 
-<br>
-<h3>Comments</h3>
+  {{/with}}
+
+  {{> qnpagecomment}}
+
+
+
+  <br>
+
+  <br>
+</div>
+<div class="commentformat">
+  <h3>Comments</h3>
+</div>
+
 
 {{#each questions}}
-<div class="heading">
-  <p>{{qnDesc}}</p>
-  <h6>{{op}}</h6>
+<div class="commentformat">
+  <div class="votecol" id="vote">
+    <div>
+
+      <img src="laugh.png" class="smiley" id="upvote">
+      <h3 class="count red block">{{upvoted.length}}</h3>
+    </div>
+    <div>
+      <img src="frown.png" class="smiley" id="downvote">
+      <h3 class="count yellow block">{{downvoted.length}}</h3>
+    </div>
+  </div>
+
+  <div class="heading">
+    <p>{{qnDesc}}</p>
+    <h6>{{op}}</h6>
+  </div>
 </div>
+
+
 {{else}}
-<p>no comments</p>
+
+<div class="commentformat">
+  <p>no comments</p>
+</div>
+
 {{/each}}
+
+<div class="joke-tail">
+  <div class="threadbar">
+    <p class="regular joke-title"></p>
+  </div>
+  <br>
+  <div class="threadbar">
+    <p class="regular joke-title"></p>
+  </div>
+</div>
 </template>

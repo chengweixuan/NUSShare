@@ -1,6 +1,14 @@
+.post-main {
+	background-color: #FFFAFA;
+	padding: 0px 0px;
+	margin: 0px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 200em;
+}
+
 .postheading{
-  border-radius: 15px;
-  background-color: #FFFFFF;
+  background-color: #FFFAFA;
   padding-left: 50px;
   margin: 0px 0px 0px 0px;
   display: flex;
@@ -9,8 +17,7 @@
 }
 
 .commentheading{
-  border-radius: 15px;
-  background-color: #FFFFFF;
+  background-color: #FFFAFA;
   padding-left: 50px;
   margin: 0px 0px 0px 0px;
   display: flex;
@@ -25,11 +32,11 @@
 }
 
 .commentformat {
-	border-radius: 25px;
-	background-color: #FFFFFF;
+	background-color: #FFFAFA;
 	padding: 0px 0px;
 	margin: 0px 0px 0px 0px;
   display: flex;
   flex-direction: row;
   flex: 0 0 200em;
+  border-bottom: solid;
 }

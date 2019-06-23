@@ -1,5 +1,4 @@
 Template.signup.rendered = function(){
-  alert("rendered");
 }
 
 Template.signup.events({

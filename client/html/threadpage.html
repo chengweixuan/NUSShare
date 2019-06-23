@@ -5,8 +5,8 @@
     {{#with single_thread}}
   <div class="thread">
     <div class="row">
-      <p class="joke-title">{{threadName}}</p>
-      <p class="regular joke-desc">{{threadDesc}} <br> Created By: {{author}} <br> Created On: {{date}}</p>
+      <p class="joke-head-font">{{threadName}}</p>
+      <p class="joke-desc">{{threadDesc}} <br> Created By: {{author}} <br> Created On: {{date}}</p>
     </div>
 
     <!--<span class="count black block">{{threadDesc}}</span>
@@ -17,12 +17,12 @@
   {{/with}}
   <br>
 
-<div class="joke">
+<div class="joke-head">
   <div class="threadbar">
-    <p class="regular joke-title">Votes</p>
+    <p class="regular joke-head-font">Votes</p>
   </div>
   <div class="threadbar">
-    <p class="regular joke-title">Topic</p>
+    <p class="regular joke-head-font">Topic</p>
   </div>
 </div>
 <!--  {{#each posts}}
@@ -79,4 +79,15 @@
   {{else}}
   <h1>no posts to display</h1>
   {{/each}}
+
+  <div class="joke-tail">
+    <div class="threadbar">
+      <p class="regular joke-title"></p>
+    </div>
+    <br>
+    <div class="threadbar">
+      <p class="regular joke-title"></p>
+    </div>
+  </div>
+
 </template>

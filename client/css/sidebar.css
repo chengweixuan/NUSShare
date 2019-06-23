@@ -17,7 +17,7 @@
   width: 80px;
 }
 
-.sidebar-left a.company-logo {
+.company-logo {
   display: block;
   text-decoration: none;
   margin: 0 auto;
@@ -26,6 +26,7 @@
   color:  #ffffff;
   font-size: 30px;
   font-weight: 600;
+  background-color: #7B68EE;
 }
 
 .sidebar-left .sidebar-links {

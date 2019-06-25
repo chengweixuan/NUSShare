@@ -27,7 +27,10 @@
   </div>
 
   {{else}}
-  <p>no queries</p>
+  <div class="postheading">
+    <p>no queries</p>
+  </div>
+
 {{/each}}
 <div class="commentheading">
   {{#with og_post}}
@@ -54,11 +57,11 @@
   <div class="votecol" id="vote">
     <div>
 
-      <img src="laugh.png" class="smiley" id="upvote">
+      <img src="/upvote_icon.png" class="smiley" id="upvote">
       <h3 class="count red block">{{upvoted.length}}</h3>
     </div>
     <div>
-      <img src="frown.png" class="smiley" id="downvote">
+      <img src="/downvote_icon.png" class="smiley" id="downvote">
       <h3 class="count yellow block">{{downvoted.length}}</h3>
     </div>
   </div>

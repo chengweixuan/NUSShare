@@ -78,7 +78,7 @@ Template.questionpage.events({
       Bert.alert("you cannot vote twice", "danger", "growl-top-right");
       // In the array!, means user has voted
     }else if(thisUser == qnAuthor){
-      Bert.alert("you cannot vote for your own joke", " danger" ,"growl-top-right");
+      Bert.alert("you cannot vote for your own post", " danger" ,"growl-top-right");
     }else{
       //not in the array, add name to array?
       Meteor.call("upvoteQn", thisQn, thisUser);//method to add voterid to upvoted
@@ -103,7 +103,7 @@ Template.questionpage.events({
       Bert.alert("you cannot vote twice", "danger", "growl-top-right");
       // In the array!, means user has voted
     }else if(thisUser == qnAuthor){
-      Bert.alert("you cannot vote for your own joke", " danger" ,"growl-top-right");
+      Bert.alert("you cannot vote for your own post", " danger" ,"growl-top-right");
     }else{
       //not in the array, add name to array?
       Meteor.call("downvoteQn", thisQn, thisUser);//method to add voterid to upvoted

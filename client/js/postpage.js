@@ -70,7 +70,7 @@ Template.postpage.events({
       Bert.alert("you cannot vote twice", "danger", "growl-top-right");
       // In the array!, means user has voted
     }else if(thisUser == commentAuthor){
-      Bert.alert("you cannot vote for your own joke", " danger" ,"growl-top-right");
+      Bert.alert("you cannot vote for your own post", " danger" ,"growl-top-right");
     }else{
       //not in the array, add name to array?
       Meteor.call("upvoteComment", thisComment, thisUser);//method to add voterid to upvoted
@@ -95,7 +95,7 @@ Template.postpage.events({
       Bert.alert("you cannot vote twice", "danger", "growl-top-right");
       // In the array!, means user has voted
     }else if(thisUser == commentAuthor){
-      Bert.alert("you cannot vote for your own joke", " danger" ,"growl-top-right");
+      Bert.alert("you cannot vote for your own post", " danger" ,"growl-top-right");
     }else{
       //not in the array, add name to array?
       Meteor.call("downvoteComment", thisComment, thisUser);//method to add voterid to upvoted
@@ -120,7 +120,7 @@ Template.postpage.events({
       Bert.alert("you cannot vote twice", "danger", "growl-top-right");
       // In the array!, means user has voted
     }else if(thisUser == postAuthor){
-      Bert.alert("you cannot vote for your own joke", " danger" ,"growl-top-right");
+      Bert.alert("you cannot vote for your own post", " danger" ,"growl-top-right");
     }else{
       //not in the array, add name to array?
       Meteor.call("upvotePost", thisPost, thisUser);//method to add voterid to upvoted
@@ -145,7 +145,7 @@ Template.postpage.events({
       Bert.alert("you cannot vote twice", "danger", "growl-top-right");
       // In the array!, means user has voted
     }else if(thisUser == postAuthor){
-      Bert.alert("you cannot vote for your own joke", " danger" ,"growl-top-right");
+      Bert.alert("you cannot vote for your own post", " danger" ,"growl-top-right");
     }else{
       //not in the array, add name to array?
       Meteor.call("downvotePost", thisPost, thisUser);//method to add voterid to upvoted

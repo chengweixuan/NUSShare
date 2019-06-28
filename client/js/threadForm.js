@@ -12,7 +12,7 @@ Template.threadForm.events({
       event.target.threadName.value = "";//clear form after sending it to server side method
       event.target.threadDesc.value = "";
 
-      Bert.alert("your thread was created!", "success", "growl-top-right");
+      Bert.alert("Your Thread Was Created!", "success", "growl-top-right");
 
     }else{
       Bert.alert("something went wrong", "danger", "growl-top-right");

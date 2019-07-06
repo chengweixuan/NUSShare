@@ -18,42 +18,32 @@
 
       <h1 class="username">{{username}}</h1>
       <h3>{{email}}</h3>
-        <div class="" id="">
+        <!--<div class="" id="">
           <img src="laugh.png" class="profile-smiley" id="laugh">
           <img src="frown.png" class="profile-smiley" id="frown">
           <img src="puke.png" class="profile-smiley" id="puke">
-        </div>
-        <div class="score" id="">
+        </div>-->
+        <!--<div class="score" id="">
           <h3 class="count red block">{{userLaughScore}}</h3>
           <h3 class="count yellow block">{{userFrownScore}}</h3>
           <h3 class="count green block">{{userPukeScore}}</h3>
-        </div>
+        </div>-->
     </center>
   </div>
   <!--[end profile] -->
 {{#each userJokes}}
   <!-- Joke -->
   <div class="joke">
+    <button class="btn btn-sml btn-danger" id="delete-joke">Delete Post</button>
     <div class="row"><!-- bootstrap row -->
 
-      <div class=".col-sm-6 .col-md-5 .col-lg-6" id="info"><!-- bootstrap col decides col size for diff window sizes -->
+      <div class="votecol" id="info"><!-- bootstrap col decides col size for diff window sizes -->
         <h1 class="joke-title">{{postTitle}}</h1><!-- header type -->
-        <p class="meta">Author: {{author}}</p>
-        <p class="meta">Posted On: {{date}}</p>
-      </div>
-      <div class=".col-sm-6 .col-md-5 .col-lg-offset-2 .col-lg-6 .col-lg-offset-0" id="vote">
-        <img src="laugh.png" class="smiley" id="laugh">
-        <img src="frown.png" class="smiley" id="frown">
-        <img src="puke.png" class="smiley" id="puke">
-      </div>
-      <div class="row" id="score">
-        <h3 class="count red block">{{laughScore}}</h3>
-        <h3 class="count yellow block">{{frownScore}}</h3>
-        <h3 class="count green block">{{pukeScore}}</h3>
+        <p class="regular joke-desc">Author: {{author}}</p>
+        <p class="regular joke-desc">Posted On: {{date}}</p>
       </div>
     </div>
-    <p class="regular joke-desc">"{{postDesc}}"</p>
-    <button class="btn btn-sml btn-danger" id="delete-joke">Delete Joke</button>
+
   </div>
   <!-- EndJoke -->
   {{else}}

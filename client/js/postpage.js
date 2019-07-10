@@ -32,7 +32,11 @@ Template.postpage.helpers({
     var id = Session.get("selectedPost");
     var comments = Comments.find({chosenPost: id},{sort: {upvoted:-1, downvoted:1}});
     return comments;
-  }
+  },
+
+  // picture: function() {   get back to this later
+  //   var id = Session.get("selectedPost");
+  // },
 
 });
 

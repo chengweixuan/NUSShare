@@ -49,6 +49,16 @@ Template.profile.helpers({
     return URL;
   },
 
+  testImage: function() {
+    Meteor.call('getPicture', null, (err, picture) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(picture);
+      }
+    });
+  },
+
 });
 
 Template.profile.events({
@@ -79,4 +89,5 @@ Template.profile.events({
     }
     return false;//prevent submit
   },
+
 });

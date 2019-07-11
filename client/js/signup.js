@@ -20,6 +20,7 @@ Template.signup.events({
           upvoted: [],
           downvoted: [],
           subscriptions: [],
+          points: 0,
         }
       }, function(err){
         if(err){

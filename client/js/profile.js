@@ -25,6 +25,15 @@ Template.profile.helpers({
     }
   },
 
+  points: function(){
+    if(!Meteor.user()){
+      Bert.alert("you are not logged in, permission denied", "danger", "growl-top-right");
+      return false;
+    }else {
+      return Meteor.user().profile.points;
+    }
+  },
+
   userJokes: function(){
     var username = Meteor.user().username;
     var userId = Meteor.userId();
@@ -45,7 +54,7 @@ Template.profile.helpers({
   UserImages: function(){
     var username = Meteor.user().username;
     var userId = Meteor.userId();
-    var URL = UserImages.findOne({username: username}, {userId: userId});//field-variable
+    var URL = UserImages.findOne({username: username}, {userId: userId});//field-variable {query},{projection} search using username
     return URL;
   },
 

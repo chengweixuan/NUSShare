@@ -32,6 +32,7 @@ Template.jokes.events({
     //var Name = Meteor.user().username;
     //console.log(Name);
     var thisPostsVotes = Posts.findOne({_id: this._id}, {upvoted: {$in: thisUser}}).upvoted;
+    var thisPostsDownvotes = Posts.findOne({_id: this._id}).downvoted;
     //console.log(thisPostsVotes);
     if(thisPostsVotes.indexOf(thisUser) > -1){
       Bert.alert("you cannot vote twice", "danger", "growl-top-right");
@@ -39,8 +40,17 @@ Template.jokes.events({
     }else if(thisUser == postAuthor){
       Bert.alert("you cannot vote for your own post", " danger" ,"growl-top-right");
     }else{
+
+      if(thisPostsDownvotes.indexOf(thisUser) > -1){
+        //current user has downvoted before
+        Meteor.call("upvotePost", thisPost, thisUser);//method to add voterid to upvoted
+        Meteor.call("userPointPlusTwo", postAuthor);
+      }else{
+        Meteor.call("upvotePost", thisPost, thisUser);//method to add voterid to upvoted
+        Meteor.call("userPointPlusOne", postAuthor);
+      }
       //not in the array, add name to array?
-      Meteor.call("upvotePost", thisPost, thisUser);//method to add voterid to upvoted
+      //method to add voterid to upvoted
       // Meteor.call("profileUpvotes", jokeAuthor);//add post id to upvoted posts in profile
       // Meteor.call("upvoteCount", thisUser, thisJoke);//update upvote count to be displayed on the post
       Bert.alert("Upvoted Post!", "success", "growl-top-right");
@@ -57,6 +67,7 @@ Template.jokes.events({
     //var Name = Meteor.user().username;
     //console.log(Name);
     var thisPostsVotes = Posts.findOne({_id: this._id}, {downvoted: {$in: thisUser}}).downvoted;
+    var thisPostsUpvotes = Posts.findOne({_id: this._id}).upvoted;
     //console.log(thisPostsVotes);
     if(thisPostsVotes.indexOf(thisUser) > -1){
       Bert.alert("you cannot vote twice", "danger", "growl-top-right");
@@ -64,8 +75,18 @@ Template.jokes.events({
     }else if(thisUser == postAuthor){
       Bert.alert("you cannot vote for your own post", " danger" ,"growl-top-right");
     }else{
+
+      if(thisPostsUpvotes.indexOf(thisUser) > -1){
+        Meteor.call("downvotePost", thisPost, thisUser);//method to add voterid to upvoted
+        Meteor.call("userPointMinusTwo", postAuthor);
+      }else{
+        Meteor.call("downvotePost", thisPost, thisUser);//method to add voterid to upvoted
+        Meteor.call("userPointMinusOne", postAuthor);
+      }
+
+
       //not in the array, add name to array?
-      Meteor.call("downvotePost", thisPost, thisUser);//method to add voterid to upvoted
+      //method to add voterid to upvoted
       // Meteor.call("profileUpvotes", jokeAuthor);//add post id to upvoted posts in profile
       // Meteor.call("upvoteCount", thisUser, thisJoke);//update upvote count to be displayed on the post
       Bert.alert("Downvoted Post!", "success", "growl-top-right");

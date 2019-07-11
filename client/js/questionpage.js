@@ -73,15 +73,26 @@ Template.questionpage.events({
     //var Name = Meteor.user().username;
     //console.log(Name);
     var thisQnVotes = Questions.findOne({_id: this._id}, {upvoted: {$in: thisUser}}).upvoted;
+    var thisQnDownvotes = Questions.findOne({_id: this._id}).downvoted;
     //console.log(thisQnVotes);
+    //console.log(qnAuthorDownvotes);
     if(thisQnVotes.indexOf(thisUser) > -1){
       Bert.alert("you cannot vote twice", "danger", "growl-top-right");
       // In the array!, means user has voted
     }else if(thisUser == qnAuthor){
       Bert.alert("you cannot vote for your own post", " danger" ,"growl-top-right");
     }else{
+      if(thisQnDownvotes.indexOf(thisUser) > -1){
+        //current user has downvoted before
+        Meteor.call("upvoteQn", thisQn, thisUser);//method to add voterid to upvoted
+        Meteor.call("userPointPlusTwo", qnAuthor);
+      }else{
+        Meteor.call("upvoteQn", thisQn, thisUser);//method to add voterid to upvoted
+        Meteor.call("userPointPlusOne", qnAuthor);
+      }
       //not in the array, add name to array?
-      Meteor.call("upvoteQn", thisQn, thisUser);//method to add voterid to upvoted
+
+      //METHOD TO ADD TO QN CREATOR POINTS
       // Meteor.call("profileUpvotes", jokeAuthor);//add post id to upvoted posts in profile
       // Meteor.call("upvoteCount", thisUser, thisJoke);//update upvote count to be displayed on the post
       Bert.alert("Upvoted Comment!", "success", "growl-top-right");
@@ -98,6 +109,7 @@ Template.questionpage.events({
     //var Name = Meteor.user().username;
     //console.log(Name);
     var thisQnVotes = Questions.findOne({_id: this._id}, {downvoted: {$in: thisUser}}).downvoted;
+    var thisQnUpvotes = Questions.findOne({_id: this._id}).upvoted;
     //console.log(thisQnVotes);
     if(thisQnVotes.indexOf(thisUser) > -1){
       Bert.alert("you cannot vote twice", "danger", "growl-top-right");
@@ -105,8 +117,17 @@ Template.questionpage.events({
     }else if(thisUser == qnAuthor){
       Bert.alert("you cannot vote for your own post", " danger" ,"growl-top-right");
     }else{
+
+      if(thisQnUpvotes.indexOf(thisUser) > -1){
+        Meteor.call("downvoteQn", thisQn, thisUser);//method to add voterid to upvoted
+        Meteor.call("userPointMinusTwo", qnAuthor);
+      }else{
+        Meteor.call("downvoteQn", thisQn, thisUser);//method to add voterid to upvoted
+        Meteor.call("userPointMinusOne", qnAuthor);
+      }
       //not in the array, add name to array?
-      Meteor.call("downvoteQn", thisQn, thisUser);//method to add voterid to upvoted
+
+      //METHOD TO SUBTRACT FROM QN CREATOR POINTS
       // Meteor.call("profileUpvotes", jokeAuthor);//add post id to upvoted posts in profile
       // Meteor.call("upvoteCount", thisUser, thisJoke);//update upvote count to be displayed on the post
       Bert.alert("Downvoted Post!", "success", "growl-top-right");

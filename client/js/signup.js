@@ -21,6 +21,7 @@ Template.signup.events({
           downvoted: [],
           subscriptions: [],
           points: 0,
+          notifications: [],
         }
       }, function(err){
         if(err){

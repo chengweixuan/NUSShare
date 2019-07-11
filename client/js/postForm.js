@@ -9,6 +9,7 @@ Template.postForm.events({
     var qnNumber = event.target.qnNumber.value;
     var chosenThread = event.target.chosenThread.value;
     var chosenThreadName = Threads.findOne({_id: chosenThread}, {threadName: 1}).threadName;
+    var threadSubers = Threads.findOne({_id: chosenThread}, {subscribers: 1}).subscribers;
 
     if(isNotEmpty(postTitle) && isNotEmpty(postDesc) && isNotEmpty(qnNumber) && isNotEmpty(chosenThread)){
       Meteor.call("addPost", postTitle, postDesc, qnNumber, chosenThread, chosenThreadName);//call Meteor server side method to do something with threadName and threadDesc
@@ -16,7 +17,8 @@ Template.postForm.events({
       event.target.postDesc.value = "";
       event.target.qnNumber.value = "";
       event.target.chosenThread.value = "";
-
+      //console.log(threadSubers);
+      Meteor.call("addPostNotif", threadSubers, postTitle, chosenThreadName);
 
       Bert.alert("Post Created!", "success", "growl-top-right");
 

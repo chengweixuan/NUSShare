@@ -1,0 +1,67 @@
+<template name="profilecomment">
+  {{#if currentUser}}
+  <!-- Joke Form-->
+  <div class="container">
+    <form class="profilecomment-form">
+
+      <h2 class="jokeForm-heading">Leave A Comment</h2>
+
+      <h4 class="jokeForm-heading">Description</h4>
+      <textarea id="proDesc" name="proDesc" placeholder="New Comment" style="height:200px"></textarea>
+
+      <button class="btn btn-lg btn-success btn-block" type="submit">Submit Comment</button><!-- upload both post and file-->
+    </form>
+  </div>
+
+  <br>
+
+  <div class="commentformat">
+    <h3 class="count blue block" id="testing">Comments</h3>
+  </div>
+
+  {{#each comments}}
+  <div class="commentformat">
+
+    <div class="votecol" id="vote">
+      <div>
+
+        <img src="/upvote_icon.png" class="smiley" id="upvoteComment">
+        <h3 class="count red block">0</h3>
+      </div>
+      <div>
+        <img src="/downvote_icon.png" class="smiley" id="downvoteComment">
+        <h3 class="count yellow block">0</h3>
+      </div>
+    </div>
+
+  <div class="row">
+      <p class="regular comment-desc">{{proDesc}}</p>
+  </div>
+
+  </div>
+  {{else}}
+
+  <div class="commentformat">
+    <p class="count blue block" id="testing">no comments to display</p>
+  </div>
+
+  {{/each}}
+
+
+  <!-- End Joke Form-->
+
+  {{else}}
+
+  <!-- Joke Form-->
+  <div id="jokeForm-wrap">
+    <center>
+      <form class="joke-post">
+        <h2 class="from-signin-heading">Login to Post a Comment</h2>
+        <a href="/" class="btn btn-md btn-primary" id="login-redir">Login</a>
+      </form>
+    </center>
+  </div>
+  <!-- End Joke Form-->
+
+  {{/if}}
+</template>

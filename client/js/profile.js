@@ -59,6 +59,26 @@ Template.profile.helpers({
     });
   },
 
+  status: function() {
+    if (Meteor.user().profile.reveal == true) {
+      return "On";
+    } else {
+      return "Off";
+    }
+  },
+
+  og_profile: function() {
+    var id = Session.get("selectedProfile");
+    var og_profile = Meteor.user().profile.reveal;
+
+    if (og_profile == true) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+
 });
 
 Template.profile.events({
@@ -88,6 +108,18 @@ Template.profile.events({
       });
     }
     return false;//prevent submit
+  },
+
+  "click #toggle": function() {
+    var user = Meteor.user();
+
+    if (Meteor.user().profile.reveal == true) {
+      Meteor.users.update( {_id: user._id}, {$set:{"profile.reveal": false}});
+    } else {
+      Meteor.users.update( {_id: user._id}, {$set:{"profile.reveal": true}});
+    }
+
+    Bert.alert("Public Comments Status Changed", "success", "growl-top-right");
   },
 
 });

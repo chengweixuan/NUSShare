@@ -25,7 +25,8 @@
 
     <div class="row">
         <a class="joke-title" href="/postpage/{{_id}}" id="redirect">{{postTitle}}</a>
-      <p class="regular joke-desc">{{chosenThreadName}} <br> Author: {{author}}</p>
+      <p class="regular joke-desc">{{chosenThreadName}}</p>
+      <a class="link-blue" href="/profiles/{{userId}}" id="profile_direct">Author: {{author}}</a>
 </div>
 </div>
     <div class="postheading" id="postsrc">
@@ -35,13 +36,13 @@
       <p>Number of Questions: {{qnNumber}}</p>
       <br>
     </div>
-
-    <div class="">
+    <br>
+    <div class="postheading">
       <iframe src="{{PDFlink}}" width="640" height="480"></iframe>
     </div>
 
   {{/with}}
-
+<br>
 <div class="commentheading">
   <br>
   {{> commentForm}}

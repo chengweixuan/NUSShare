@@ -158,4 +158,9 @@ Template.postpage.events({
       Bert.alert("Downvoted Post!", "success", "growl-top-right");
     }
   },
+
+  "click #profile_direct": function(){
+    Session.set("selectedProfile", this.userId);
+  },
+  
 });

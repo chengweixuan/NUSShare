@@ -1,4 +1,9 @@
-<template name="profile">
+<template name="profiles">
+
+  <p>yo whasaap</p>
+
+  <br>
+
   {{#if currentUser}}
   <!--[profile] -->
   <div id="profile-wrap">
@@ -6,19 +11,11 @@
       {{#with UserImages}}<!--if this user has a user image then render image -->
         <img src="{{image}}" class="profile-img">
       {{else}}
-        <img src="github.svg" class="profile-img">
-        <form class="edit-profile" enctype="multipart/form-data" >
-          <label for="profileImage">choose profile Image</label>
-          <span id="filename"></span>
-          <input type="file" name="profileImage" id="profileImage" class="black profileImage">
-          <br>
-          <button type="submit" value="Upload a Photo" id="profile-btn" class="btn btn-sml btn-primary">Upload Photo</button>
-        </form>
+        <img src="/github.svg" class="profile-img">
       {{/with}}
 
       <h1 class="username">{{username}}</h1>
       <h3>{{email}}</h3>
-      <h3 id="toggle">Change Public Comments Status: {{status}}</h3>
         <!--<div class="" id="">
           <img src="laugh.png" class="profile-smiley" id="laugh">
           <img src="frown.png" class="profile-smiley" id="frown">
@@ -35,7 +32,7 @@
 {{#each userJokes}}
   <!-- Joke -->
   <div class="joke">
-    <button class="btn btn-sml btn-danger" id="delete-joke">Delete Post</button>
+
     <div class="row"><!-- bootstrap row -->
 
       <div class="votecol" id="info"><!-- bootstrap col decides col size for diff window sizes -->
@@ -62,7 +59,7 @@
   });
 </script>
 
-<br>
+  <br>
 
   {{#with og_profile}}
 
@@ -70,5 +67,9 @@
 
   {{/with}}
 
+
+
+
   {{/if}}
+
 </template>

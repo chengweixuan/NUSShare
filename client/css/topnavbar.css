@@ -57,12 +57,12 @@
 }
 
 .icon-book {
+  display: block;
+  padding: 0px 0px 0px 0px;
+  background-color: #7B68EE;
   width: 50px;
+  margin-right:1200px;
   postion: fixed;
-  left: 0;
-  top: 0;
-  padding-left: 0px;
-  padding-right: 7px;
     -webkit-transition: all 0.5s;
        -moz-transition: all 0.5s;
          -o-transition: all 0.5s;

@@ -5,36 +5,41 @@
   <div class="navbar" id="myTopnav">
 
           <a class="company-logo" href="/jokes">NUS SHARE</a>
-
-
-
-
-
-                <a href="/threadForm">Create a New Thread</a>
-                <a href="/postForm">Create a New  Post</a>
-
-
-
-
           {{#if currentUser}}
-
-          <a class="link-red" href="/profile" id="profile-link"><i class="fa fa-user"></i>Profile</a> <!-- id used in html to specify a unique html element or to point to a style in css -->
-
+          <a class="link-blue" href="/jokes" id="jokes-link"><i class="fa fa-home"></i></a>
+          <a class="link-red" href="/profile" id="profile-link"><i class="fa fa-user"></i></a> <!-- id used in html to specify a unique html element or to point to a style in css -->
+          <a href="#" class="notification" onclick="myFunction()"><i class="fa fa-bell"></i><span class="badge">3</span></a>
+          <a class="link-green" href="/threadsearch" id="search-link"><i class="fa fa-search"></i></a>
+          <a href="/threadForm"><i class="fa fa-plus"></i>Thread</a>
+          <a href="/postForm"><i class="fa fa-plus"></i>Post</a>
           {{else}}
           {{/if}}
-          <a class="link-blue" href="/jokes" id="jokes-link"><i class="fa fa-comments-o"></i>Subscribed Posts</a>
+
           <!--<a class="link-yellow" href="/rankings" id="rankings-link"><i class="fa fa-trophy"></i>Rankings</a>-->
           <!--<a class="link-green" href="/search" id="search-link"><i class="fa fa-search"></i>Search</a>-->
-          <a class="link-green" href="/threadsearch" id="search-link"><i class="fa fa-search"></i>Search Threads</a>
+
           {{#if currentUser}}
           <a class="link-purple logout" href="#" id="logout-link"><i class="fa fa-sign-out"></i>Logout</a>
+
           {{else}}
           <a class="" href="/" id="login-link"><i class="fa fa-sign-in"></i>Login</a>
           {{/if}}
         <a href="javascript:void(0);" class="icon" onclick="resize_dropdown()"><i class="fa fa-bars"></i></a>
   </div>
 
+<div class="pop">
+  <a class="popup">
+<span class="popuptext" id="myPopup">A Simple Popup!</span>
+</a>
+</div>
+
+
   <script>
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+
   function resize_dropdown() {
     var x = document.getElementById("myTopnav");
     if (x.className === "navbar") {

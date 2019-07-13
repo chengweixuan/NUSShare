@@ -95,4 +95,8 @@ Template.jokes.events({
     Session.set("selectedPost", this._id);
   },
 
+  "click #profile_direct": function(){
+    Session.set("selectedProfile", this.userId);
+  },
+
 });

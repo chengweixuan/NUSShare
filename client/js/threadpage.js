@@ -77,4 +77,8 @@ Template.threadpage.events({
     }
   },
 
+  "click #profile_direct": function(){
+    Session.set("selectedProfile", this.userId);
+  },
+
 });

@@ -67,4 +67,9 @@ Template.threadUser.events({
 			Bert.alert("you cannot subscribe to your own thread", " danger" ,"growl-top-right");
 		}
 	},
+
+	"click #profile_direct": function(){
+    Session.set("selectedProfile", this.userId);
+  },
+	
 });

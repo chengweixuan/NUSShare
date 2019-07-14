@@ -18,10 +18,13 @@ Template.postForm.events({
       event.target.qnNumber.value = "";
       event.target.chosenThread.value = "";
       //console.log(threadSubers);
+
+
       Meteor.call("addPostNotif", threadSubers, postTitle, chosenThreadName);
 
       Bert.alert("Post Created!", "success", "growl-top-right");
-
+      //var curr_post_id = Posts.findOne({}, { sort: { createdAt: -1 }})
+      //console.log(curr_post_id);
     }else{
       Bert.alert("something went wrong", "danger", "growl-top-right");
     }

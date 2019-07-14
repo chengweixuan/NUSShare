@@ -8,7 +8,7 @@
           {{#if currentUser}}
           <a class="link-blue" href="/jokes" id="jokes-link"><i class="fa fa-home"></i></a>
           <a class="link-red" href="/profile" id="profile-link"><i class="fa fa-user"></i></a> <!-- id used in html to specify a unique html element or to point to a style in css -->
-          <a href="#" class="notification" onclick="myFunction()"><i class="fa fa-bell"></i><span class="badge">3</span></a>
+          <a href="#" class="notification" onclick="myFunction()"><i class="fa fa-bell"></i><span class="badge">2</span></a>
           <a class="link-green" href="/threadsearch" id="search-link"><i class="fa fa-search"></i></a>
           <a href="/threadForm"><i class="fa fa-plus"></i>Thread</a>
           <a href="/postForm"><i class="fa fa-plus"></i>Post</a>
@@ -29,7 +29,17 @@
 
 <div class="pop">
   <a class="popup">
-<span class="popuptext" id="myPopup">A Simple Popup!</span>
+    <div class="popuptext" id="myPopup">
+      {{#if notifications}}
+      <div id="myNotis">
+
+      </div>
+      {{else}}
+      <a>No Notifications</a>
+      {{/if}}
+
+    <br><a class="clearNotifications">CLEAR</a></div>
+
 </a>
 </div>
 
@@ -38,6 +48,29 @@
     function myFunction() {
       var popup = document.getElementById("myPopup");
       popup.classList.toggle("show");
+
+      if(popup.classList.contains('show')){
+
+        //console.log("show notifications");
+        var noti_show = Meteor.user().profile.notifications;
+        var noti_showSize = noti_show.length;
+        for(i = 0; i<noti_showSize; i++){
+          var anchor = document.createElement('a');
+          anchor.setAttribute('class', 'link-green goToPost');
+          //var qnLink = "/postpage/" + id;
+          var qnLink = "#";
+          anchor.setAttribute('href', qnLink);
+          anchor.innerHTML = "Latest in " + noti_show[i][1] + "<br>" + noti_show[i][0] + "<br><br>";
+          anchor.setAttribute('id', (i+1));
+          document.getElementById("myNotis").appendChild(anchor);
+
+        }
+      }else{
+        //console.log("hide notifications");
+
+          $("#myNotis").empty();
+
+      }
     }
 
   function resize_dropdown() {

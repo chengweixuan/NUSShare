@@ -23,25 +23,25 @@ Template.topnavbar.events({
 });
 
 Template.topnavbar.helpers({//to retrieve jokes from Jokes database
-  notifications_00: function(){
-    var all_noti = Meteor.user().profile.notifications;
-      return all_noti[0][0];
-  },
-
-  notifications_01: function(){
-    var all_noti = Meteor.user().profile.notifications;
-      return all_noti[0][1];
-  },
-
-  notifications_10: function(){
-    var all_noti = Meteor.user().profile.notifications;
-      return all_noti[1][0];
-  },
-
-  notifications_11: function(){
-    var all_noti = Meteor.user().profile.notifications;
-      return all_noti[1][1];
-  },
+  // notifications_00: function(){
+  //   var all_noti = Meteor.user().profile.notifications;
+  //     return all_noti[0][0];
+  // },
+  //
+  // notifications_01: function(){
+  //   var all_noti = Meteor.user().profile.notifications;
+  //     return all_noti[0][1];
+  // },
+  //
+  // notifications_10: function(){
+  //   var all_noti = Meteor.user().profile.notifications;
+  //     return all_noti[1][0];
+  // },
+  //
+  // notifications_11: function(){
+  //   var all_noti = Meteor.user().profile.notifications;
+  //     return all_noti[1][1];
+  // },
 
   notifications: function(){
     var notifications = Meteor.user().profile.notifications;
@@ -51,5 +51,11 @@ Template.topnavbar.helpers({//to retrieve jokes from Jokes database
     }else{
       return false;
     }
+  },
+
+  notifications_num: function(){
+    var noti_show = Meteor.user().profile.notifications;
+    var noti_showSize = noti_show.length;
+      return noti_showSize;
   },
 });

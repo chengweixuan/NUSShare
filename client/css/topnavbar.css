@@ -102,7 +102,7 @@
 
 /* The actual popup */
 .popup .popuptext {
-  background-color: #555;
+  background-color: #7B68EE;
   color: #fff;
   display: none;
   position: absolute;
@@ -121,7 +121,7 @@
   margin-left: 100px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent #555 transparent;
+  border-color: transparent transparent #7B68EE transparent;
 }
 
 /* Toggle this class - hide and show the popup */

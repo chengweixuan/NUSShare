@@ -34,6 +34,16 @@ Template.profile.helpers({
     }
   },
 
+  rank: function(){
+    var noob = "noob";
+    if(!Meteor.user()){
+      Bert.alert("you are not logged in, permission denied", "danger", "growl-top-right");
+      return false;
+    }else if(Meteor.user().profile.points == 0) {
+      return noob;
+    }
+  },
+
   userJokes: function(){
     var username = Meteor.user().username;
     var userId = Meteor.userId();

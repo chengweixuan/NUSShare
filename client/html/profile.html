@@ -19,6 +19,7 @@
       <h1 class="username">{{username}}</h1>
       <h3>{{email}}</h3>
       <h3>Points: {{points}}</h3>
+      <h3>Rank: {{rank}}</h3>
         <!--<div class="" id="">
           <img src="laugh.png" class="profile-smiley" id="laugh">
           <img src="frown.png" class="profile-smiley" id="frown">
@@ -48,7 +49,10 @@
   </div>
   <!-- EndJoke -->
   {{else}}
-  <h1>no jokes to display</h1>
+  <div class="joke">
+    <h1>No Posts Yet!</h1>
+  </div>
+
   {{/each}}
 
 <!-- js for switching file picker span -->

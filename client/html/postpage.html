@@ -25,7 +25,7 @@
 
     <div class="row">
         <a class="joke-title" href="/postpage/{{_id}}" id="redirect">{{postTitle}}</a>
-      <p class="regular joke-desc">{{chosenThreadName}} <br> Author: {{author}}</p>
+      <p class="regular joke-desc">{{chosenThreadName}} <br> Author: {{author}} <br> Created on: {{date}}</p>
 </div>
 </div>
     <div class="postheading" id="postsrc">
@@ -45,7 +45,7 @@
 </div>
 
 <div class="commentformat">
-  <h3 class="count blue block" id="testing">Comments</h3>
+  <h3 id="testing">Comments</h3>
 </div>
 
 
@@ -63,15 +63,17 @@
   </div>
 </div>
 <div class="row">
+    <p class="regular comment-desc">Created on: {{date}}</p>
     <p class="regular comment-desc">{{commentDesc}}</p>
 </div>
+
 
 
 </div>
 {{else}}
 
 <div class="commentformat">
-  <p class="count blue block" id="testing">no comments to display</p>
+  <p id="testing">no comments to display</p>
 </div>
 
 {{/each}}

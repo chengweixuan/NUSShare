@@ -8,7 +8,7 @@
           {{#if currentUser}}
           <a class="link-blue" href="/jokes" id="jokes-link"><i class="fa fa-home"></i></a>
           <a class="link-red" href="/profile" id="profile-link"><i class="fa fa-user"></i></a> <!-- id used in html to specify a unique html element or to point to a style in css -->
-          <a href="#" class="notification" onclick="myFunction()"><i class="fa fa-bell"></i><span class="badge">2</span></a>
+          <a href="#" class="notification" onclick="myFunction()"><i class="fa fa-bell"></i><span class="badge">{{notifications_num}}</span></a>
           <a class="link-green" href="/threadsearch" id="search-link"><i class="fa fa-search"></i></a>
           <a href="/threadForm"><i class="fa fa-plus"></i>Thread</a>
           <a href="/postForm"><i class="fa fa-plus"></i>Post</a>
@@ -35,10 +35,10 @@
 
       </div>
       {{else}}
-      <a>No Notifications</a>
+      <a style="color:#FFFAFA;">No Notifications</a>
       {{/if}}
 
-    <br><a class="clearNotifications">CLEAR</a></div>
+    <br><a style="color:#FFFAFA;" class="clearNotifications">CLEAR</a></div>
 
 </a>
 </div>
@@ -56,7 +56,7 @@
         var noti_showSize = noti_show.length;
         for(i = 0; i<noti_showSize; i++){
           var anchor = document.createElement('a');
-          anchor.setAttribute('class', 'link-green goToPost');
+          anchor.setAttribute('style', 'color:#FFFAFA;');
           //var qnLink = "/postpage/" + id;
           var qnLink = "#";
           anchor.setAttribute('href', qnLink);

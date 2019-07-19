@@ -141,3 +141,15 @@
   from {opacity: 0;}
   to {opacity:1 ;}
 }
+  .icon-book {
+    display: block;
+    padding: 0px 0px 0px 0px;
+    background-color: #7B68EE;
+    width: 50px;
+    margin-right:1200px;
+    postion: fixed;
+      -webkit-transition: all 0.5s;
+         -moz-transition: all 0.5s;
+           -o-transition: all 0.5s;
+              transition: all 0.5s;
+}

@@ -22,6 +22,7 @@ Template.signup.events({
           subscriptions: [],
           points: 0,
           notifications: [],
+          reveal: true,
         }
       }, function(err){
         if(err){

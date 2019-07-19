@@ -20,6 +20,7 @@ Meteor.startup(function() {
           subscriptions: [],
           points: 0,
           notifications: [],
+          reveal: true,
         }
       });
 
@@ -51,6 +52,7 @@ Meteor.startup(function() {
           subscriptions: [],
           points: 0,
           notifications: [],
+          reveal: true,
         }
       });
 
@@ -82,6 +84,7 @@ Meteor.startup(function() {
           subscriptions: [],
           points: 0,
           notifications: [],
+          reveal: true,
         }
       });
 
@@ -117,6 +120,7 @@ Meteor.startup(function() {
           subscriptions: [],
           points: 0,
           notifications: [],
+          reveal: true,
         }
       });
 
@@ -151,6 +155,7 @@ Meteor.startup(function() {
           subscriptions: [],
           points: 0,
           notifications: [],
+          reveal: true,
         }
       });
 

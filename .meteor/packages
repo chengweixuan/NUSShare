@@ -36,3 +36,4 @@ cfs:gridfs
 
 easysearch:elasticsearch
 easysearch:autosuggest
+http

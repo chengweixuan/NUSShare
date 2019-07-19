@@ -6,7 +6,9 @@
   <div class="thread">
     <div class="row">
       <p class="joke-head-font">{{threadName}}</p>
-      <p class="joke-desc">{{threadDesc}} <br> Created By: {{author}} <br> Created On: {{date}}</p>
+      <p class="joke-desc">{{threadDesc}}</p>
+      <a class="joke-desc" href="/profiles/{{userId}}" id="profile_direct">Created By: {{author}}</a>
+      <p class="joke-desc">Created On: {{date}}</p>
     </div>
 
     <!--<span class="count black block">{{threadDesc}}</span>
@@ -69,7 +71,8 @@
         <h3 class="count red block">{{upvoted.length}}</h3>
         <h3 class="count yellow block">{{downvoted.length}}</h3>
       </div>-->
-      <p class="regular joke-desc">{{chosenThreadName}} <br> Author: {{author}} <br> Created on: {{date}}</p>
+      <p class="regular joke-desc">{{chosenThreadName}} <br> Created on: {{date}}</p>
+      <a class="regular joke-desc" href="/profiles/{{userId}}" id="profile_direct">Author: {{author}}</a>
     </div>
 
     <!--<p class="regular joke-desc">{{postDesc}}</p>

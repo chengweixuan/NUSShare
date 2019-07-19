@@ -79,7 +79,8 @@
       <h3 class="count red block">{{upvoted.length}}</h3>
       <h3 class="count yellow block">{{downvoted.length}}</h3>
     </div>-->
-    <p class="regular joke-desc">{{chosenThreadName}} <br> Author: {{author}} <br> Created on: {{date}}</p>
+    <p class="regular joke-desc">{{chosenThreadName}} <br> Created on: {{date}}</p>
+    <a class="link-blue" href="/profiles/{{userId}}" id="profile_direct">Author: {{author}}</a>
   </div>
 
   <!--<p class="regular joke-desc">{{postDesc}}</p>
@@ -88,7 +89,7 @@
 </div>
 {{else}}
 <div class="joke">
-<h4>no posts to display</h4>  
+<h4>no posts to display</h4>
 </div>
 
 {{/each}}

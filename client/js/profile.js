@@ -39,8 +39,16 @@ Template.profile.helpers({
     if(!Meteor.user()){
       Bert.alert("you are not logged in, permission denied", "danger", "growl-top-right");
       return false;
+    }else if(Meteor.user().profile.points < 0) {
+      return "Leech";
     }else if(Meteor.user().profile.points == 0) {
-      return noob;
+      return "New Kid";
+    }else if(Meteor.user().profile.points > 0 && Meteor.user().profile.points <= 5) {
+      return "Handy Man";
+    }else if(Meteor.user().profile.points == 0) {
+      return "Answer Prince";
+    }else if(Meteor.user().profile.points == 0) {
+      return "Lobang King";
     }
   },
 

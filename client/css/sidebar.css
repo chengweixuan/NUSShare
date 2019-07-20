@@ -17,6 +17,18 @@
   width: 80px;
 }
 
+.book-logo {
+  display: block;
+  text-decoration: none;
+  margin: auto;
+  padding: 0px 0px 0px 0px;
+  text-align:right;
+  color:  #ffffff;
+  font-size: 60px;
+  font-weight: 600;
+  background-color: #7B68EE;
+}
+
 .company-logo {
   display: block;
   text-decoration: none;

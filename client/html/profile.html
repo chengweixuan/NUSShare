@@ -20,7 +20,9 @@
       <h3>{{email}}</h3>
       <h3>Points: {{points}}</h3>
       <h3>Rank: {{rank}}</h3>
-      <h3 id="toggle">Change Public Comments Status: {{status}}</h3>
+      <!--<h3 id="toggle">Toggle Public Comments Status: {{status}}</h3>-->
+      <button id="toggle" class="btn btn-sml btn-primary">Toggle Public Comments Status: {{status}}</button>
+
         <!--<div class="" id="">
           <img src="laugh.png" class="profile-smiley" id="laugh">
           <img src="frown.png" class="profile-smiley" id="frown">
@@ -33,6 +35,8 @@
         </div>-->
     </center>
   </div>
+  <!-- Rounded switch -->
+
   <!--[end profile] -->
 {{#each userJokes}}
   <!-- Joke -->

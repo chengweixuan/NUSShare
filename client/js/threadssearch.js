@@ -51,9 +51,9 @@ Template.threadUser.events({
 		//console.log(thisThread);
 		var Name = Meteor.user().username;
 		//console.log(Name);
-		var thisThreadsSubs = Threads.findOne({_id: this.__originalId}, {subscribers: {$in: Name}}).subscribers;
+		var thisThreadsSubs = Threads.findOne({_id: this.__originalId}, {subscribers: {$in: thisUser}}).subscribers;
 		//console.log(thisThreadsSubs);
-		if(thisThreadsSubs.indexOf(Name) > -1){
+		if(thisThreadsSubs.indexOf(thisUser) > -1){
 			Bert.alert("You Are Already Subscribed", "danger", "growl-top-right");
 			// In the array!, means user has voted
 		}else{
@@ -71,5 +71,5 @@ Template.threadUser.events({
 	"click #profile_direct": function(){
     Session.set("selectedProfile", this.userId);
   },
-	
+
 });

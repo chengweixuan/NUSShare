@@ -1,11 +1,14 @@
 Template.jokes.rendered = function(){//when Meteor renderes the profile page then...
   }
 
+
+
 Template.jokes.helpers({//to retrieve jokes from Jokes database
   posts: function(){
     var subbedthreads = Meteor.user().profile.subscriptions;
 
     var posts = Posts.find({chosenThread:{$in: subbedthreads}},{sort: {upvoted:-1, downvoted:1}});
+
     return posts;
   },
   subscriptions: function(){
@@ -14,7 +17,10 @@ Template.jokes.helpers({//to retrieve jokes from Jokes database
     return subscriptions;
   },
 
-
+  // userrank: function(){
+  //   var userrank = Meteor.users.findOne({_id: postcreator_id}).profile.rank;
+  //   return userrank;
+  // },
 });
 
 Template.jokes.events({
@@ -53,6 +59,7 @@ Template.jokes.events({
       //method to add voterid to upvoted
       // Meteor.call("profileUpvotes", jokeAuthor);//add post id to upvoted posts in profile
       // Meteor.call("upvoteCount", thisUser, thisJoke);//update upvote count to be displayed on the post
+      Meteor.call("updateRankUpvote", postAuthor);
       Bert.alert("Upvoted Post!", "success", "growl-top-right");
     }
   },
@@ -89,6 +96,7 @@ Template.jokes.events({
       //method to add voterid to upvoted
       // Meteor.call("profileUpvotes", jokeAuthor);//add post id to upvoted posts in profile
       // Meteor.call("upvoteCount", thisUser, thisJoke);//update upvote count to be displayed on the post
+      Meteor.call("updateRankDownvote", postAuthor);
       Bert.alert("Downvoted Post!", "success", "growl-top-right");
     }
   },

@@ -35,7 +35,6 @@ Template.profile.helpers({
   },
 
   rank: function(){
-    var noob = "noob";
     if(!Meteor.user()){
       Bert.alert("you are not logged in, permission denied", "danger", "growl-top-right");
       return false;
@@ -45,10 +44,12 @@ Template.profile.helpers({
       return "New Kid";
     }else if(Meteor.user().profile.points > 0 && Meteor.user().profile.points <= 5) {
       return "Handy Man";
-    }else if(Meteor.user().profile.points == 0) {
+    }else if(Meteor.user().profile.points == 6 && Meteor.user().profile.points <= 10) {
       return "Answer Prince";
-    }else if(Meteor.user().profile.points == 0) {
+    }else if(Meteor.user().profile.points == 11 && Meteor.user().profile.points <= 20) {
       return "Lobang King";
+    }else if(Meteor.user().profile.points >20){
+      return "NUS God"
     }
   },
 

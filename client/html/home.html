@@ -81,6 +81,8 @@
     </div>-->
     <p class="regular joke-desc">{{chosenThreadName}} <br> Created on: {{date}}</p>
     <a class="link-blue" href="/profiles/{{userId}}" id="profile_direct">Author: {{author}}</a>
+    <!--<button type="button" onclick="userRank()"></button>-->
+    <p class="ranking" id="{{userId}}"></p>
   </div>
 
   <!--<p class="regular joke-desc">{{postDesc}}</p>
@@ -123,6 +125,43 @@ if (!event.target.matches('.dropbtn1')) {
   }
 }
 }
+
+function userRank() {
+  //var userRank = Meteor.users.findOne({_id: postcreator_id}).profile.rank;
+  //return userRank;
+  var ranked_users = document.getElementsByClassName("ranking");
+  var k;
+  for(k = 0; k< ranked_users.length; k++){
+    var rkuser = ranked_users[k].id;
+    console.log(rkuser);
+    var userrank = Meteor.users.findOne({_id: rkuser}).profile.rank;
+    //console.log(userrank);
+    document.getElementById(rkuser).innerHTML = userrank;
+  }
+}
+var int=setInterval('check()', 500);
+function check(){
+  if (chkObject('div')==true)
+  {
+     //window.alert('true');
+     int=window.clearInterval(int);
+     userRank();
+  }
+  else
+  {
+    userRank();
+  }
+}
+
+function chkObject(elemId)
+{
+   return (document.getElementsByClassName("ranking"))? true : false;
+}
+
+// setTimeout(function(){
+//
+// }, 1000);
+
 
 /*filterSelection("all")
 function filterSelection(c) {

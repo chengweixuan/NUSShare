@@ -81,8 +81,8 @@
     </div>-->
     <p class="regular joke-desc">{{chosenThreadName}} <br> Created on: {{date}}</p>
     <a class="link-blue" href="/profiles/{{userId}}" id="profile_direct">Author: {{author}}</a>
-    <!--<button type="button" onclick="userRank()"></button>-->
-    <p class="ranking" id="{{userId}}"></p>
+    <button type="button" onclick="userRank()"></button>
+    <p class="ranking {{userId}}" id="{{userId}}"></p>
   </div>
 
   <!--<p class="regular joke-desc">{{postDesc}}</p>
@@ -133,10 +133,16 @@ function userRank() {
   var k;
   for(k = 0; k< ranked_users.length; k++){
     var rkuser = ranked_users[k].id;
-    console.log(rkuser);
+    //console.log(rkuser);
     var userrank = Meteor.users.findOne({_id: rkuser}).profile.rank;
     //console.log(userrank);
-    document.getElementById(rkuser).innerHTML = userrank;
+    var class_id = "ranking " + rkuser;
+    var class_id_occur = document.getElementsByClassName(class_id);
+    var j;
+    for(j = 0; j< class_id_occur.length; j++){
+      document.getElementsByClassName(class_id)[j].innerHTML = userrank;
+    }
+    //console.log(class_id);
   }
 }
 var int=setInterval('check()', 500);

@@ -60,6 +60,7 @@ Template.jokes.events({
       // Meteor.call("profileUpvotes", jokeAuthor);//add post id to upvoted posts in profile
       // Meteor.call("upvoteCount", thisUser, thisJoke);//update upvote count to be displayed on the post
       Meteor.call("updateRankUpvote", postAuthor);
+      var int=setInterval('check()', 500);
       Bert.alert("Upvoted Post!", "success", "growl-top-right");
     }
   },
@@ -97,6 +98,7 @@ Template.jokes.events({
       // Meteor.call("profileUpvotes", jokeAuthor);//add post id to upvoted posts in profile
       // Meteor.call("upvoteCount", thisUser, thisJoke);//update upvote count to be displayed on the post
       Meteor.call("updateRankDownvote", postAuthor);
+      var int=setInterval('check()', 500);
       Bert.alert("Downvoted Post!", "success", "growl-top-right");
     }
   },

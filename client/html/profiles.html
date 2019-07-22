@@ -15,17 +15,15 @@
       {{/with}}
 
       <h1 class="username">{{username}}</h1>
+      <h3>{{realname}}</h3>
+      <h3>{{bio}}</h3>
       <h3>{{email}}</h3>
-        <!--<div class="" id="">
-          <img src="laugh.png" class="profile-smiley" id="laugh">
-          <img src="frown.png" class="profile-smiley" id="frown">
-          <img src="puke.png" class="profile-smiley" id="puke">
-        </div>-->
-        <!--<div class="score" id="">
-          <h3 class="count red block">{{userLaughScore}}</h3>
-          <h3 class="count yellow block">{{userFrownScore}}</h3>
-          <h3 class="count green block">{{userPukeScore}}</h3>
-        </div>-->
+
+      {{#with yourProfile}}
+      <br>
+      <h4>This is your Profile</h4>
+      <a class="btn btn-sml btn-primary" href="/profile">Go to your Profile Page</a>
+      {{/with}}
     </center>
   </div>
   <!--[end profile] -->

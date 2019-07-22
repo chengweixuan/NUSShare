@@ -25,6 +25,14 @@ Template.profile.helpers({
     }
   },
 
+  realname: function() {
+    return Meteor.user().profile.realname;
+  },
+
+  bio: function() {
+    return Meteor.user().profile.bio;
+  },
+
   points: function(){
     if(!Meteor.user()){
       Bert.alert("you are not logged in, permission denied", "danger", "growl-top-right");

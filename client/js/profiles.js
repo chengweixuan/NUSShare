@@ -28,6 +28,16 @@ Template.profiles.helpers({
     }
   },
 
+  realname: function() {
+    var id = Session.get("selectedProfile");
+    return Meteor.users.findOne({_id: id}).profile.realname;
+  },
+
+  bio: function() {
+    var id = Session.get("selectedProfile");
+    return Meteor.users.findOne({_id: id}).profile.bio;
+  },
+
   userJokes: function(){
     var userId = Session.get("selectedProfile");
     var userJokes = Posts.find({userId: userId}, {sort: {createdAt: -1}});//grab all the jokes posted by userId with most recent one on top
@@ -56,6 +66,16 @@ Template.profiles.helpers({
     var og_profile = Meteor.users.findOne({_id: id}).profile.reveal;
 
     if (og_profile == true) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+  yourProfile: function() {
+    var id = Session.get("selectedProfile");
+
+    if (id == Meteor.user()._id) {
       return true;
     } else {
       return false;

@@ -145,6 +145,31 @@ Template.profile.events({
     return false;//prevent submit
   },
 
+  "submit .edit-picture": function(event){
+    var file = $("#editImage").get(0). files[0];
+
+    if(file){
+      fsFile = new FS.File(file);//making a new FS file corresponding with the gridfs package
+      ProfileImages.update(fsFile, function(err, result){
+        if(err){
+          throw new Meteor.Error(err);
+        }else{
+          var imageLoc = "/cfs/files/ProfileImages/" + result._id;
+
+          // ProfileImages.update({_id: Meteor.user()._id}, {$set:{"image": imageLoc}});
+
+          UserImages.update({
+            userId: Meteor.userId(),
+            username: Meteor.user().username,
+            image: imageLoc,
+          });
+          Bert.alert("picture update successful", "success", "growl-top-right");
+        }
+      });
+    }
+    return false;//prevent submit
+  },
+
   "click #toggle": function() {
     var user = Meteor.user();
 

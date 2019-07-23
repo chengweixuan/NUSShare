@@ -16,6 +16,11 @@ Template.edit.events({
     var user = Meteor.user();
     var alert = "Profile Edited!\n"
 
+    if (isNotEmpty(username)) {
+      Meteor.call("changeUsername", username);
+      alert += "Username Changed!\n";
+    }
+
     if (isNotEmpty(realname)) {
       Meteor.users.update( {_id: user._id}, {$set:{"profile.realname": realname}});
       alert += "Real Name Added!\n";

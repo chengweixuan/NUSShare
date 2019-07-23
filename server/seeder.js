@@ -21,6 +21,7 @@ Meteor.startup(function() {
           points: 0,
           notifications: [],
           reveal: true,
+          anon: false,
         }
       });
 
@@ -53,6 +54,7 @@ Meteor.startup(function() {
           points: 0,
           notifications: [],
           reveal: true,
+          anon: false,
         }
       });
 
@@ -85,6 +87,7 @@ Meteor.startup(function() {
           points: 0,
           notifications: [],
           reveal: true,
+          anon: false,
         }
       });
 
@@ -121,6 +124,7 @@ Meteor.startup(function() {
           points: 0,
           notifications: [],
           reveal: true,
+          anon: false,
         }
       });
 
@@ -156,6 +160,7 @@ Meteor.startup(function() {
           points: 0,
           notifications: [],
           reveal: true,
+          anon: false,
         }
       });
 

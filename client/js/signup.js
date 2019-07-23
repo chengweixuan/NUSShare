@@ -23,6 +23,7 @@ Template.signup.events({
           points: 0,
           notifications: [],
           reveal: true,
+          anon: false,
         }
       }, function(err){
         if(err){

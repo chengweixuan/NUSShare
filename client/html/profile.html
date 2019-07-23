@@ -24,13 +24,18 @@
       {{/with}}
 
       <h1 class="username">{{username}}</h1>
-      <h3>{{realname}}</h3>
+      {{#with og_anon}}
+      <h3>Real Name: {{realname}}</h3>
+      {{/with}}
       <h3>{{bio}}</h3>
       <h3>{{email}}</h3>
       <h3>Points: {{points}}</h3>
       <h3>Rank: {{rank}}</h3>
       <!--<h3 id="toggle">Toggle Public Comments Status: {{status}}</h3>-->
       <button id="toggle" class="btn btn-sml btn-primary">Toggle Public Comments Status: {{status}}</button>
+      {{#with has_anon}}
+      <button id="toggle-anon" class="btn btn-sml btn-primary">Toggle Anonymity</button>
+      {{/with}}
       <a class="btn btn-sml btn-primary" href="/edit">Edit Profile</a>
 
         <!--<div class="" id="">

@@ -113,6 +113,20 @@ Template.profile.helpers({
     }
   },
 
+  og_anon: function() {
+    var og_anon = Meteor.user().profile.anon;
+
+    if (og_anon == true) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+  has_anon: function() {
+    return anon = Meteor.user().profile.realname;
+  },
+
 
 });
 
@@ -180,6 +194,18 @@ Template.profile.events({
     }
 
     Bert.alert("Public Comments Status Changed", "success", "growl-top-right");
+  },
+
+  "click #toggle-anon": function() {
+    var user = Meteor.user();
+
+    if (Meteor.user().profile.anon == true) {
+      Meteor.users.update( {_id: user._id}, {$set:{"profile.anon": false}});
+    } else {
+      Meteor.users.update( {_id: user._id}, {$set:{"profile.anon": true}});
+    }
+
+    Bert.alert("Anon Setting Changed", "success", "growl-top-right");
   },
 
 });

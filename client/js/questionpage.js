@@ -95,6 +95,8 @@ Template.questionpage.events({
       //METHOD TO ADD TO QN CREATOR POINTS
       // Meteor.call("profileUpvotes", jokeAuthor);//add post id to upvoted posts in profile
       // Meteor.call("upvoteCount", thisUser, thisJoke);//update upvote count to be displayed on the post
+      Meteor.call("updateRankUpvote", qnAuthor);
+      var int=setInterval('check()', 500);
       Bert.alert("Upvoted Comment!", "success", "growl-top-right");
     }
   },
@@ -130,8 +132,37 @@ Template.questionpage.events({
       //METHOD TO SUBTRACT FROM QN CREATOR POINTS
       // Meteor.call("profileUpvotes", jokeAuthor);//add post id to upvoted posts in profile
       // Meteor.call("upvoteCount", thisUser, thisJoke);//update upvote count to be displayed on the post
+      Meteor.call("updateRankDownvote", qnAuthor);
+      var int=setInterval('check()', 500);
       Bert.alert("Downvoted Post!", "success", "growl-top-right");
     }
   },
 
+  "submit .qnpagecomment-form": function(){
+    event.preventDefault();
+    var qnDesc = event.target.qnDesc.value;
+    var chosenQn = Session.get("selectedQn");
+    var posterId = Session.get("selectedPost");
+    var poster = Posts.findOne( {_id: posterId} ).author;
+
+    if(isNotEmpty(qnDesc) && isNotEmpty(chosenQn)){
+      Meteor.call("addQnComment", qnDesc, chosenQn, poster);//call Meteor server side method to do something with threadName and threadDesc
+      event.target.qnDesc.value = "";//clear form after sending it to server side method with stuff
+      event.target.chosenQn.value = "";
+      var int=setInterval('check()', 500);
+      Bert.alert("Comment Created!", "success", "growl-top-right");
+    }else{
+      Bert.alert("something went wrong", "danger", "growl-top-right");
+    }
+
+  },
+
 });
+//validation Rules
+var isNotEmpty = function(value){
+  if(value && value !==''){
+    return true;
+  }
+  Bert.alert("Please fill in all fields", "danger", "growl-top-right");
+  return false;
+};

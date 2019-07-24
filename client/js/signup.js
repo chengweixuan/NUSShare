@@ -40,7 +40,7 @@ Template.signup.events({
   }
 });
 
-//Validation Rules
+//Validation Rules creating shit
 
 //Trim Helper
 var trimInput = function(val){

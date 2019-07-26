@@ -201,9 +201,14 @@ Template.profile.events({
     var user = Meteor.user();
 
     if (Meteor.user().profile.anon == true) {
+      // turn anon off
       Meteor.users.update( {_id: user._id}, {$set:{"profile.anon": false}});
+      console.log(Meteor.user().profile.realname.length);
+      Meteor.call('anonOff', Meteor.user().profile.realname);
     } else {
+      // turn anon on
       Meteor.users.update( {_id: user._id}, {$set:{"profile.anon": true}});
+      Meteor.call('anonOn', Meteor.user().profile.realname);
     }
 
     Bert.alert("Anon Setting Changed", "success", "growl-top-right");

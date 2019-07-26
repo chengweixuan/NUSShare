@@ -18,6 +18,7 @@ Template.edit.events({
 
     if (isNotEmpty(username)) {
       Meteor.call("changeUsername", username);
+      Meteor.call("updateUsername", username);
       alert += "Username Changed!\n";
     }
 
@@ -43,7 +44,7 @@ Template.edit.events({
   "click #testing": function() {
     var username = "gaydude";
     console.log("console testing");
-    Meteor.users.update( {_id: user._id}, {$set:{"username": username}});
+    Meteor.call("updateUsername", username);
   },
 
 

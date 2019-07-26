@@ -24,6 +24,7 @@ Template.signup.events({
           notifications: [],
           reveal: true,
           anon: false,
+          rank: ["New Kid"],
         }
       }, function(err){
         if(err){

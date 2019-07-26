@@ -28,6 +28,26 @@ Template.profiles.helpers({
     }
   },
 
+  points: function(){
+    if(!Meteor.user()){
+      Bert.alert("you are not logged in, permission denied", "danger", "growl-top-right");
+      return false;
+    }else {
+      var id = id = Session.get("selectedProfile");
+      return Meteor.users.findOne({_id: id}).profile.points;
+    }
+  },
+
+  rank: function(){
+    if(!Meteor.user()){
+      Bert.alert("you are not logged in, permission denied", "danger", "growl-top-right");
+      return false;
+    }else{
+      var id = id = Session.get("selectedProfile");
+      return Meteor.users.findOne({_id: id}).profile.rank;
+    }
+  },
+
   userJokes: function(){
     var userId = Session.get("selectedProfile");
     var userJokes = Posts.find({userId: userId}, {sort: {createdAt: -1}});//grab all the jokes posted by userId with most recent one on top

@@ -23,18 +23,13 @@
   <div class="commentformat">
 
     <div class="votecol" id="vote">
-      <div>
 
-        <img src="/upvote_icon.png" class="smiley" id="upvoteComment">
-        <h3 class="count red block">0</h3>
-      </div>
-      <div>
-        <img src="/downvote_icon.png" class="smiley" id="downvoteComment">
-        <h3 class="count yellow block">0</h3>
-      </div>
     </div>
 
   <div class="row">
+    <p class="regular comment-desc">Created on: {{date}}</p>
+    <a class="link-blue" href="/profiles/{{userId}}" id="profile_direct">Author: {{author}}</a>
+    <p class="ranking {{userId}}" id="{{userId}}"></p>
       <p class="regular comment-desc">{{proDesc}}</p>
   </div>
 
@@ -64,4 +59,49 @@
   <!-- End Joke Form-->
 
   {{/if}}
+
+  <script>
+
+  function userRank() {
+    //var userRank = Meteor.users.findOne({_id: postcreator_id}).profile.rank;
+    //return userRank;
+    var ranked_users = document.getElementsByClassName("ranking");
+    var k;
+    for(k = 0; k< ranked_users.length; k++){
+      var rkuser = ranked_users[k].id;
+      //console.log(rkuser);
+      var userrank = Meteor.users.findOne({_id: rkuser}).profile.rank;
+      //console.log(userrank);
+      var class_id = "ranking " + rkuser;
+      var class_id_occur = document.getElementsByClassName(class_id);
+      var j;
+      for(j = 0; j< class_id_occur.length; j++){
+        document.getElementsByClassName(class_id)[j].innerHTML = userrank;
+      }
+      //console.log(class_id);
+    }
+  }
+  var int=setInterval('check()', 500);
+  function check(){
+    if (chkObject('div')==true)
+    {
+       //window.alert('true');
+       int=window.clearInterval(int);
+       userRank();
+    }
+    else
+    {
+      userRank();
+    }
+  }
+
+  function chkObject(elemId)
+  {
+     return (document.getElementsByClassName("ranking"))? true : false;
+  }
+
+
+
+  </script>
+
 </template>

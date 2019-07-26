@@ -28,6 +28,10 @@ Template.jokes.events({
     Session.set("selectedThread", this._id);
   },
 
+  'click #rankreset': function() {
+    return userRank();
+  },
+
   "click #upvote" : function(){
     Bert.alert("You Clicked Upvote", "success", "growl-top-right");
     var thisUser = Meteor.userId();

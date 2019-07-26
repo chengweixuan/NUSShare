@@ -23,6 +23,10 @@ Template.threadpage.events({
     console.log(id);
   },
 
+  'click .rankreset': function() {
+    return userRank();
+  },
+
   "click #redirect": function() {
     Session.set("selectedPost", this._id);
   },

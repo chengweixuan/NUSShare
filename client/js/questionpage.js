@@ -61,6 +61,9 @@ Template.questionpage.events({
 
     // return false;
   //},
+  'click .rankreset': function() {
+    return userRank();
+  },
 
   "click #upvoteQn" : function(){
     Bert.alert("You Clicked Upvote", "success", "growl-top-right");

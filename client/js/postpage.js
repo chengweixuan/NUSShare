@@ -47,6 +47,10 @@ Template.postpage.events({
     console.log(id);
   },
 
+  'click .rankreset': function() {
+    return userRank();
+  },
+
   "click #testcreate": function() {
     console.log(Meteor.userId());
   },

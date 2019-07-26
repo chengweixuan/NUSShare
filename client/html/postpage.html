@@ -25,7 +25,7 @@
 
     <div class="row">
         <a class="joke-title" href="/postpage/{{_id}}" id="redirect">{{postTitle}}</a>
-      <p class="regular joke-desc">{{chosenThreadName}} <br> Created on: {{date}}</p>
+      <p class="regular joke-desc rankreset">{{chosenThreadName}} <br> Created on: {{date}}</p>
       <a class="link-blue" href="/profiles/{{userId}}" id="profile_direct">Author: {{author}}</a>
       <img class="img {{userId}} book-logo" src="" alt="Flowers in Chania" width="18" height="18" style="float:left">
       <p class="ranking {{userId}}" id="{{userId}}"></p>
@@ -34,7 +34,7 @@
     <div class="postheading" id="postsrc">
       <p>{{postDesc}}</p>
       <br>
-      <p>Number of votes: no of upvoted - no of downvoted </p>
+      <!--<p>Number of votes: no of upvoted - no of downvoted </p>-->
       <p>Number of Questions: {{qnNumber}}</p>
       <br>
     <!--<a href="{{PDFlink}}">{{PDFlink}}</a>-->
@@ -83,7 +83,7 @@
 </div>
 
 <div class="commentformat">
-  <h3 id="testing">Comments</h3>
+  <h3 class="rankreset">Comments</h3>
 </div>
 
 

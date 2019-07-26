@@ -145,25 +145,18 @@ function userRank() {
       var icon = document.createElement('img');
       var icon_img;
       if(userrank == "Leech"){
-        icon_img = "Leech.png";
+        icon_img = "/Leech.png";
       }else if(userrank == "New Kid"){
-        icon_img = "New_Kid.png";
+        icon_img = "/New_Kid.png";
       }else if(userrank == "Handy Man"){
-        icon_img = "Handy_Man.png";
+        icon_img = "/Handy_Man.png";
       }else if(userrank == "Answer Prince"){
-        icon_img = "Prince.png";
+        icon_img = "/Prince.png";
       }else if(userrank == "Lobang King"){
-        icon_img = "king.jpg";
+        icon_img = "/king.jpg";
       }else if(userrank == "NUS God"){
-        icon_img = "god.png";
+        icon_img = "/god.png";
       }
-      // icon.setAttribute('src', icon_img);
-      // icon.setAttribute('alt', 'Flowers in Chania');
-      // icon.setAttribute('width', "18");
-      // icon.setAttribute('height', "18");
-      // icon.setAttribute('style', "float:left");
-      // icon.setAttribute('class', "book-logo");
-      // console.log(userrank);
       document.getElementsByClassName(class_id)[j].innerHTML = userrank;
       document.getElementsByClassName(img_id)[j].setAttribute('src', icon_img);
 
@@ -174,6 +167,7 @@ function userRank() {
     //console.log(class_id);
   }
 }
+
 var int=setInterval('check()', 500);
 function check(){
   if (chkObject('div')==true)

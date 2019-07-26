@@ -140,7 +140,26 @@ function userRank() {
     var class_id_occur = document.getElementsByClassName(class_id);
     var j;
     for(j = 0; j< class_id_occur.length; j++){
+      // var icon = document.createElement('img');
+      // var icon_img;
+      // if(userrank[0] == "Leech"){
+      //   icon_img = "Leech.png";
+      // }else if(userrank[0] = "New Kid"){
+      //   icon_img = "New_Kid.png";
+      // }else if(userrank[0] = "Handy Man"){
+      //   icon_img = "book.png";
+      // }
+      // icon.setAttribute('src', icon_img);
+      // icon.setAttribute('alt', 'Flowers in Chania');
+      // icon.setAttribute('width', "18");
+      // icon.setAttribute('height', "18");
+      // icon.setAttribute('style', "float:left");
+      // icon.setAttribute('class', "book-logo");
+      // console.log(userrank);
       document.getElementsByClassName(class_id)[j].innerHTML = userrank;
+
+      //document.getElementsByClassName(class_id)[j].appendChild(icon);
+
     }
     //console.log(class_id);
   }

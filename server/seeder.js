@@ -21,7 +21,7 @@ Meteor.startup(function() {
           points: 0,
           notifications: [],
           reveal: true,
-          rank: [],
+          rank: ["New Kid"],
         }
       });
 
@@ -54,7 +54,7 @@ Meteor.startup(function() {
           points: 0,
           notifications: [],
           reveal: true,
-          rank: [],
+          rank: ["New Kid"],
         }
       });
 
@@ -87,7 +87,7 @@ Meteor.startup(function() {
           points: 0,
           notifications: [],
           reveal: true,
-          rank: [],
+          rank: ["New Kid"],
         }
       });
 
@@ -124,7 +124,7 @@ Meteor.startup(function() {
           points: 0,
           notifications: [],
           reveal: true,
-          rank: [],
+          rank: ["New Kid"],
         }
       });
 
@@ -160,7 +160,7 @@ Meteor.startup(function() {
           points: 0,
           notifications: [],
           reveal: true,
-          rank: [],
+          rank: ["New Kid"],
         }
       });
 

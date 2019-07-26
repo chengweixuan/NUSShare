@@ -9,6 +9,7 @@
       <p class="joke-desc">{{threadDesc}}</p>
       <a class="joke-desc" href="/profiles/{{userId}}" id="profile_direct">Created By: {{author}}</a>
       <p class="joke-desc">Created On: {{date}}</p>
+      <p class="ranking {{userId}}" id="{{userId}}"></p>
       <!--<span id="subThread">Subscribe</span>
       <br>
       <span id="unsubThread">Unsubscribe</span>-->
@@ -82,6 +83,7 @@
       </div>-->
       <p class="regular joke-desc">{{chosenThreadName}} <br> Created on: {{date}}</p>
       <a class="regular joke-desc" href="/profiles/{{userId}}" id="profile_direct">Author: {{author}}</a>
+      <p class="ranking {{userId}}" id="{{userId}}"></p>
     </div>
 
     <!--<p class="regular joke-desc">{{postDesc}}</p>
@@ -103,5 +105,49 @@
       <p class="regular joke-title"></p>
     </div>
   </div>
+
+  <script>
+
+  function userRank() {
+    //var userRank = Meteor.users.findOne({_id: postcreator_id}).profile.rank;
+    //return userRank;
+    var ranked_users = document.getElementsByClassName("ranking");
+    var k;
+    for(k = 0; k< ranked_users.length; k++){
+      var rkuser = ranked_users[k].id;
+      //console.log(rkuser);
+      var userrank = Meteor.users.findOne({_id: rkuser}).profile.rank;
+      //console.log(userrank);
+      var class_id = "ranking " + rkuser;
+      var class_id_occur = document.getElementsByClassName(class_id);
+      var j;
+      for(j = 0; j< class_id_occur.length; j++){
+        document.getElementsByClassName(class_id)[j].innerHTML = userrank;
+      }
+      //console.log(class_id);
+    }
+  }
+  var int=setInterval('check()', 500);
+  function check(){
+    if (chkObject('div')==true)
+    {
+       //window.alert('true');
+       int=window.clearInterval(int);
+       userRank();
+    }
+    else
+    {
+      userRank();
+    }
+  }
+
+  function chkObject(elemId)
+  {
+     return (document.getElementsByClassName("ranking"))? true : false;
+  }
+
+
+
+  </script>
 
 </template>

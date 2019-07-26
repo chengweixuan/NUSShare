@@ -28,14 +28,34 @@ Template.profiles.helpers({
     }
   },
 
-  realname: function() {
-    var id = Session.get("selectedProfile");
-    return Meteor.users.findOne({_id: id}).profile.realname;
+realname: function() {
+  var id = Session.get("selectedProfile");
+  return Meteor.users.findOne({_id: id}).profile.realname;
+},
+
+bio: function() {
+  var id = Session.get("selectedProfile");
+  return Meteor.users.findOne({_id: id}).profile.bio;
+},
+
+  points: function(){
+    if(!Meteor.user()){
+      Bert.alert("you are not logged in, permission denied", "danger", "growl-top-right");
+      return false;
+    }else {
+      var id = id = Session.get("selectedProfile");
+      return Meteor.users.findOne({_id: id}).profile.points;
+    }
   },
 
-  bio: function() {
-    var id = Session.get("selectedProfile");
-    return Meteor.users.findOne({_id: id}).profile.bio;
+  rank: function(){
+    if(!Meteor.user()){
+      Bert.alert("you are not logged in, permission denied", "danger", "growl-top-right");
+      return false;
+    }else{
+      var id = id = Session.get("selectedProfile");
+      return Meteor.users.findOne({_id: id}).profile.rank;
+    }
   },
 
   userJokes: function(){

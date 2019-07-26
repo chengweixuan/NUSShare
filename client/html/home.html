@@ -81,7 +81,8 @@
     </div>-->
     <p class="regular joke-desc">{{chosenThreadName}} <br> Created on: {{date}}</p>
     <a class="link-blue" href="/profiles/{{userId}}" id="profile_direct">Author: {{author}}</a>
-    <button type="button" onclick="userRank()"></button>
+    <!--<button type="button" onclick="userRank()"></button>-->
+    <img class="img {{userId}} book-logo" src="" alt="Flowers in Chania" width="18" height="18" style="float:left">
     <p class="ranking {{userId}}" id="{{userId}}"></p>
   </div>
 
@@ -137,10 +138,38 @@ function userRank() {
     var userrank = Meteor.users.findOne({_id: rkuser}).profile.rank;
     //console.log(userrank);
     var class_id = "ranking " + rkuser;
+    var img_id = "img " + rkuser;
     var class_id_occur = document.getElementsByClassName(class_id);
     var j;
     for(j = 0; j< class_id_occur.length; j++){
+      var icon = document.createElement('img');
+      var icon_img;
+      if(userrank == "Leech"){
+        icon_img = "Leech.png";
+      }else if(userrank == "New Kid"){
+        icon_img = "New_Kid.png";
+      }else if(userrank == "Handy Man"){
+        icon_img = "Handy_Man.png";
+      }else if(userrank == "Answer Prince"){
+        icon_img = "Prince.png";
+      }else if(userrank == "Lobang King"){
+        icon_img = "king.jpg";
+      }else if(userrank == "NUS God"){
+        icon_img = "god.png";
+      }
+      // icon.setAttribute('src', icon_img);
+      // icon.setAttribute('alt', 'Flowers in Chania');
+      // icon.setAttribute('width', "18");
+      // icon.setAttribute('height', "18");
+      // icon.setAttribute('style', "float:left");
+      // icon.setAttribute('class', "book-logo");
+      // console.log(userrank);
       document.getElementsByClassName(class_id)[j].innerHTML = userrank;
+      document.getElementsByClassName(img_id)[j].setAttribute('src', icon_img);
+
+
+      //document.getElementsByClassName(class_id)[j].appendChild(icon);
+
     }
     //console.log(class_id);
   }
